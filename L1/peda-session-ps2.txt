@@ -1,6 +1,9 @@
-break /home/karan/Desktop/csn-261/L1/PS-2.c:22
-break /home/karan/Desktop/csn-261/L1/PS-2.c:85
-
-
-
+break /home/karan/Desktop/csn-261/L1/PS-2.c:32
+break /home/karan/Desktop/csn-261/L1/PS-2.c:37
+break /home/karan/Desktop/csn-261/L1/PS-2.c:44
+break /home/karan/Desktop/csn-261/L1/PS-2.c:48
+break /home/karan/Desktop/csn-261/L1/PS-2.c:52
+break /home/karan/Desktop/csn-261/L1/PS-2.c:101
+break /home/karan/Desktop/csn-261/L1/PS-2.c:131
+break /home/karan/Desktop/csn-261/L1/PS-2.c:158
 

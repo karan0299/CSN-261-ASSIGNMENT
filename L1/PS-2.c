@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 typedef struct deque {
-    int* ptr;
-    int rear,front;
-    int size;
+  int* ptr;
+  int rear,front;
+  int size;
 } deque;
 
 void newDeque(deque *p);

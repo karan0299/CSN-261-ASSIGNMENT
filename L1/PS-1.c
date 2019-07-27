@@ -26,8 +26,8 @@ void delete(int roll,queue *q);
 void search(int n);
 void modify(int roll);
 void printList();
-void sort();
-void bubbleSort();
+void sortByName();
+void sortByRollNumber();
 void swap_int(int *r1,int *r2);
 
 node *first = NULL, *last = NULL;
@@ -88,11 +88,11 @@ void main() {
     int op;
     
     FILE *stream = fopen("StudentData.csv", "r");
-    char *name_data[13];
-    char *address[13];
-    char *dtob[13];
-    char *phone[13];
-    char line[1024];
+    char **name_data = (char**)malloc(13 * sizeof(char*));
+    char **address =(char**)malloc(13 * sizeof(char*));;
+    char **dtob = (char**)malloc(13 * sizeof(char*));;
+    char **phone = (char**)malloc(13 * sizeof(char*));;
+    char *line = (char*)malloc(1024 * sizeof(char));
     int i=0;
     fgets(line, 1024, stream);
     char* token=strtok(line, ",");
@@ -119,12 +119,14 @@ void main() {
         printf("\n1.Insertt\n2.Delete\n3.Search\n4.modify\n5.sort\n6.PrintList\n\nEnter ur choice");
         printf("\nenter -1 to exit\n");
         scanf("%d",&op);
+        while ((getchar()) != '\n'); 
         switch(op){
             case 1: printf("operation insert\n");
                     printf("Enter number  for the student you want to insert\n");
                     int num;
                     int rollnum;
                     scanf("%d",&num);
+                    while ((getchar()) != '\n'); 
                     if((rollnum=pop(&unusedRoll))!=-1)
                        insert(rollnum,name_data[num-1],dtob[num-1],address[num-1],phone[num-1]);
                     else 
@@ -140,17 +142,19 @@ void main() {
                     printf("enter roll number to search for:\n");
                     int rollnumber;
                     scanf("%d",&rollnumber);
+                    while ((getchar()) != '\n'); 
                     search(rollnumber);
                     printf("operation completed");                   
                     break;
             case 4: printf("operation modify");
                     int num_in;
                     scanf("%d",&num_in);
+                    while ((getchar()) != '\n'); 
                     modify(num_in);
                     printf("operation completed"); 
                     break;
             case 5: printf("operation sort by name");
-                    sort();
+                    sortByName();
                     printf("operation completed");
                     break;    
             case 6: printf("operation print");
@@ -164,13 +168,17 @@ void main() {
     }    
 }
 
-node* newNode( int roll,char* name,char* dob,char* addr,char* phno){
+node* newNode( int roll,char* nome,char* dobt,char* adr,char* phnu){
    node* one_node = (node*)(malloc(sizeof(node)));
+//    one_node->name = (char*)malloc(strlen(nome) * sizeof(char));
+//    one_node->dob = (char*)malloc(strlen(dobt)* sizeof(char));
+//    one_node->addr = (char*)malloc(strlen(adr)* sizeof(char));
+//    one_node->phno = (char*)malloc(strlen(phnu)* sizeof(char));
    one_node->roll=roll;
-   strcpy(one_node->name,name);
-   strcpy(one_node->dob,dob);
-   strcpy(one_node->addr,addr);
-   strcpy(one_node->phno,phno);
+   strcpy(one_node->name,nome);
+   strcpy(one_node->dob,dobt);
+   strcpy(one_node->addr,adr);
+   strcpy(one_node->phno,phnu);
    one_node->next = one_node;
    one_node->prev = one_node;
    return one_node;
@@ -182,7 +190,8 @@ void insert( int roll,char* name,char* dob,char* addr,char* phno){
     {
        first = last = nNode;
        first->next = last->next = NULL;
-       first->prev = last->prev = NULL;      
+       first->prev = last->prev = NULL;    
+       while ((getchar()) != '\n');   
     }
     else
     {
@@ -191,7 +200,8 @@ void insert( int roll,char* name,char* dob,char* addr,char* phno){
        last = nNode;
        last->next = first;
        first->prev = last;
-       bubbleSort();
+       sortByRollNumber();
+       while ((getchar()) != '\n'); 
     }
 }
 
@@ -261,18 +271,22 @@ void modify(int roll){
     }while(current!=first);
     if(b){
         printf("enter  name\n");
-        scanf("%s",current->name);
+        scanf("%[^\n]s",current->name);
+        while ((getchar()) != '\n'); 
         printf("enter  phone number\n");
         scanf("%s",current->phno);
+        while ((getchar()) != '\n'); 
         printf("enter  address\n");
-        scanf("%s",current->addr);
+        scanf("%[^\n]s",current->addr);
+        while ((getchar()) != '\n'); 
         printf("enter dob\n");
         scanf("%s",current->dob);
+        while ((getchar()) != '\n'); 
     }
     else printf("roll number is still unused");
 }
 
-void sort(){
+void sortByName(){
     int swapped, i; 
     struct node *ptr1; 
     struct node *lptr = first;    
@@ -287,7 +301,7 @@ void sort(){
             char* n1=ptr1->name;
             char* n2=ptr1->next->name;
             if (strcmp(n1,n2)>0) 
-            {  
+            { 
                 swap_int(&(ptr1->roll), &(ptr1->next->roll)); 
                 char temp[128];
                 char temp2[1024];
@@ -325,10 +339,10 @@ void printList(){
         current=current->next;
     }while(current!=first&&first->next!=NULL);
      if(first!=last)
-      bubbleSort();
+     sortByRollNumber();
 }
 
-void bubbleSort() { 
+void sortByRollNumber() { 
     int swapped, i; 
      node *ptr1; 
      node *lptr = first; 
@@ -338,7 +352,6 @@ void bubbleSort() {
     { 
         swapped = 0; 
         ptr1 = first; 
-   
         while (ptr1->next != lptr) 
         { 
             if ((ptr1->roll > ptr1->next->roll)) 
