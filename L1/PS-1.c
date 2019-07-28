@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include<string.h>
 #include<stdbool.h>
+#include <time.h>
 #define MAX 13
 
 typedef struct queue {
@@ -115,52 +116,94 @@ void main() {
             printf("%s\n",phone[i]);
             i++;
         }
-    while(1){
-        printf("\n1.Insertt\n2.Delete\n3.Search\n4.modify\n5.sort\n6.PrintList\n\nEnter ur choice");
+    clock_t start, end;
+    double cpu_time;
+
+    while (1) {
+        printf("\n\n1.Insert\n2.Delete\n3.Search\n4.modify\n5.sort\n6.PrintList\n\nEnter ur choice");
         printf("\nenter -1 to exit\n");
         scanf("%d",&op);
         while ((getchar()) != '\n'); 
         switch(op){
-            case 1: printf("operation insert\n");
+            case 1: 
+                    printf("operation insert\n");
                     printf("Enter number  for the student you want to insert\n");
                     int num;
                     int rollnum;
                     scanf("%d",&num);
                     while ((getchar()) != '\n'); 
+                    start = clock ();
                     if((rollnum=pop(&unusedRoll))!=-1)
                        insert(rollnum,name_data[num-1],dtob[num-1],address[num-1],phone[num-1]);
                     else 
                        printf("linked list in full\n");
-                    printf("operation completed\n");   
+                    printf("operation completed\n"); 
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time);  
                     break; 
-            case 2: printf("operation delete\n");
+
+            case 2: 
+                    printf("operation delete\n");
                     printf("enter roll to delete\n") ;
                     int rolln;
-                    delete(rolln,&unusedRoll);   
-                    break;  
-            case 3: printf("operation search\n");
+                    scanf("%d",&rolln);
+                    while ((getchar()) != '\n'); 
+                    start = clock ();
+                    delete(rolln,&unusedRoll); 
+                    printf("operation completed\n"); 
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time);  
+                    break;
+
+            case 3: 
+                    printf("operation search\n");
                     printf("enter roll number to search for:\n");
                     int rollnumber;
                     scanf("%d",&rollnumber);
                     while ((getchar()) != '\n'); 
+                    start = clock ();
                     search(rollnumber);
-                    printf("operation completed");                   
+                    printf("operation completed"); 
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time);                  
                     break;
-            case 4: printf("operation modify");
+
+            case 4: 
+                    printf("operation modify");
                     int num_in;
                     scanf("%d",&num_in);
                     while ((getchar()) != '\n'); 
+                    start = clock ();
                     modify(num_in);
-                    printf("operation completed"); 
+                    printf("operation completed");
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time); 
                     break;
-            case 5: printf("operation sort by name");
+
+            case 5: 
+                    printf("operation sort by name");
+                    start = clock ();
                     sortByName();
                     printf("operation completed");
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time);
                     break;    
-            case 6: printf("operation print");
+
+            case 6: 
+                    printf("operation print");
+                    start = clock ();
                     printList();
-                    printf("operation completed");    
-                    break;                 
+                    printf("operation completed");   
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time); 
+                    break;   
+                                  
             default: printf("wrong choice");            
         } 
         if(op==-1)

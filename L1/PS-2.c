@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 typedef struct deque {
   int* ptr;
@@ -20,63 +21,109 @@ void empty(deque *p);
 void main() {
   deque que;
   newDeque(&que);
-  printf("\n1.InsertFront\n2.InsertBack\n3.DeleteRear\n4.DeleteFront\n5.Get Element\n6.Search element\n7.Print deque\n8.Empty deque\n\nEnter ur choice");
-  printf("\nenter -1 to exit\n");
-
+  clock_t start, end;
+  double cpu_time;
   int f;  
-
-  while(1){
-    
+  while(1){  
+    printf("\n1.InsertFront\n2.InsertBack\n3.DeleteRear\n4.DeleteFront\n5.Get Element\n6.Search element\n7.Print deque\n8.Empty deque\n\nEnter ur choice");
+    printf("\nenter -1 to exit\n");
     scanf("%d",&f);
-    // printf("%d\n",f);
     switch(f) {
-      case 1: printf("operation: insert at front end\n");
+      case 1: 
+              printf("operation: insert at front end\n");
               printf("enter interger\n");
               int n;
               scanf("%d",&n);
+              start = clock ();
               insertFront(&que,n);
               printf("operation completed\n");
+              end = clock();
+              cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+              printf("cpu time used %f", cpu_time);
               break;
-      case 2: printf("operation: insert at rear end\n");
+
+      case 2: 
+              printf("operation: insert at rear end\n");
               printf("enter interger\n");
               int num;
               scanf("%d",&num);
+              start = clock ();
               insertBack(&que,num);
               printf("operation completed\n");
+              end = clock();
+              cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+              printf("cpu time used %f", cpu_time);
               break;
-      case 3: printf("operation: deletion at front end\n");
+
+      case 3: 
+              printf("operation: deletion at front end\n");
+              start = clock ();
               deleteFront(&que);
               printf("operation completed\n");
+              end = clock();
+              cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+              printf("cpu time used %f", cpu_time);
               break;
-      case 4: printf("operation: deletion at rear end\n");
+
+      case 4: 
+              printf("operation: deletion at rear end\n");
+              start = clock ();
               deleteBack(&que);
               printf("operation completed\n");
+              end = clock();
+              cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+              printf("cpu time used %f", cpu_time);
               break;
-      case 5: printf("operation: get element\n");
+
+      case 5: 
+              printf("operation: get element\n");
               printf("enter index\n");
               int i;
               scanf("%d",&i);
+              start = clock ();
               int ans=get(&que,i);
               if(ans==-1)
                 printf("error:index greater than size\n");
               else
                 printf("%d\n",ans); 
               printf("operation completed\n");
+              end = clock();
+              cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+              printf("cpu time used %f", cpu_time);
               break;
-      case 6: printf("enter number \n");
+
+      case 6: 
+              printf("enter number \n");
               int number;
               scanf("%d",&number);
+              start = clock ();
               int answer=search(&que,n);
               if(answer==-1)
                 printf("element does not exist in deque\n");
               else
                 printf("%d\n",answer); 
               printf("operation completed\n");
+              end = clock();
+              cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+              printf("cpu time used %f", cpu_time);
               break;
-      case 7: printList(&que);
+
+      case 7: 
+              start = clock ();
+              printList(&que);
+              end = clock();
+              cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+              printf("cpu time used %f", cpu_time);
               break;
-      case 8: empty(&que);
+
+      case 8: 
+              start = clock ();
+              empty(&que);
+              end = clock();
+              cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+              printf("cpu time used %f", cpu_time);
               break;
+              
       default: printf("operation does not exist\n");
     }
     if(f==-1) break;

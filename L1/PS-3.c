@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<string.h>
-
+#include <time.h>
 
 void removeRed(int **red,int **blue,int **green){
     for(int i=0;i<953;i++){
@@ -82,30 +82,75 @@ void main() {
     inputFile(green,"./SCQ3/Q3_Input/Green.dat");
     inputFile(blue,"./SCQ3/Q3_Input/Blue.dat"); 
 
+     clock_t start, end;
+     double cpu_time;
+
     int op;
     while(1){
         printf("\n1.Remove red shade\n2.Remove green shade\n3.Remove blue shade\n4.Preserve red\n5.Preserve Blue\n6.Preserve Green\n7.Print current pixel value\n\nEnter ur choice");
         printf("\nenter -1 to exit\n");
         scanf("%d",&op);
         switch(op) {
-            case 1: removeRed(red,blue,green);
+            case 1: 
+                    start = clock ();
+                    removeRed(red,blue,green);
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time);
                     break;
-            case 2: removeGreen(red,blue,green);
-                    break;  
-            case 3: removeBlue(red,blue,green);
+
+            case 2: 
+                    start = clock ();
+                    removeGreen(red,blue,green);
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time);
+                    break;
+
+            case 3:     
+                    start = clock ();
+                    removeBlue(red,blue,green);
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time);
                     break; 
-            case 4: preserveRed(red,blue,green);
+                    
+            case 4: 
+                    start = clock ();
+                    preserveRed(red,blue,green);
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time);
                     break;
-            case 5: preserveBlue(red,blue,green);
-                    break; 
-            case 6: preserveGreen(red,blue,green);
+
+            case 5: 
+                    start = clock ();
+                    preserveBlue(red,blue,green);
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time);
                     break;
-            case 7: printf("Enter the coordinates ,  0<=x<953 , 0<=y<1268");
+
+            case 6: 
+                    start = clock ();
+                    preserveGreen(red,blue,green);
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time);
+                    break;
+
+            case 7: 
+                    printf("Enter the coordinates ,  0<=x<953 , 0<=y<1268");
                     int x,y;
                     scanf("%d",&x);
                     scanf("%d",&y);
+                    start = clock ();
                     pixelValue(x,y,red,blue,green);
+                    end = clock();
+                    cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+                    printf("cpu time used %f", cpu_time);
                     break;
+                    
             default: printf("invalid operation");                       
         }
         if(op==-1)
