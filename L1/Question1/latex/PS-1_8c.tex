@@ -1,0 +1,925 @@
+\hypertarget{PS-1_8c}{}\doxysection{P\+S-\/1.c File Reference}
+\label{PS-1_8c}\index{PS-\/1.c@{PS-\/1.c}}
+
+
+brief explanation of \mbox{\hyperlink{PS-1_8c}{P\+S-\/1.\+c}} from xn  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structqueue}{queue}}
+\begin{DoxyCompactList}\small\item\em to store unused roll numbers \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structnode}{node}}
+\begin{DoxyCompactList}\small\item\em node to encapsulate individual student\textquotesingle{}s data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{PS-1_8c_a392fb874e547e582e9c66a08a1f23326}{M\+AX}}~13
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structqueue}{queue}} \mbox{\hyperlink{PS-1_8c_ae3925075f052290340ee4c1eb2a484e6}{queue}}
+\begin{DoxyCompactList}\small\item\em to store unused roll numbers \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structnode}{node}} \mbox{\hyperlink{PS-1_8c_ace29f146c273d2654669dc2c710603e2}{node}}
+\begin{DoxyCompactList}\small\item\em node to encapsulate individual student\textquotesingle{}s data \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{PS-1_8c_a235c4856e18be8f9d0338a4a3f8bab7c}{insert}} (int roll, char $\ast$name, char $\ast$dob, char $\ast$addr, char $\ast$phno)
+\begin{DoxyCompactList}\small\item\em to insert the new data inyto doubly linked list \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structnode}{node}} $\ast$ \mbox{\hyperlink{PS-1_8c_a6578e01c6355b6a2425cd0c6c5c6db45}{new\+Node}} (int roll, char $\ast$name, char $\ast$dob, char $\ast$addr, char $\ast$phno)
+\begin{DoxyCompactList}\small\item\em to initialize each node \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PS-1_8c_a3bcfd34802ff7b2faca2cf7405801678}{delete}} (int roll, \mbox{\hyperlink{structqueue}{queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em to delete the node corresponding to given roll number \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PS-1_8c_aaad50dfc23d8e85c6373349849b85ae6}{search}} (int n)
+\begin{DoxyCompactList}\small\item\em to search for student having given roll number \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PS-1_8c_a200187ffd1c25041d20c0acb7b02a014}{modify}} (int roll)
+\begin{DoxyCompactList}\small\item\em modify the information \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PS-1_8c_a2f736094bbaa598f70c3e241bad4a1cc}{print\+List}} ()
+\begin{DoxyCompactList}\small\item\em to print the list of students \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PS-1_8c_a16af310ad608852c74a4b3c1f5c694c9}{sort\+By\+Name}} ()
+\begin{DoxyCompactList}\small\item\em sort the list according to aphabetical order \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PS-1_8c_a4a4a143e1a7fa6bf90c3a799f74f9703}{sort\+By\+Roll\+Number}} ()
+\begin{DoxyCompactList}\small\item\em sort the list according to roll number \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PS-1_8c_a4c72369c9202f982163ec9fed42d1b03}{swap\+\_\+int}} (int $\ast$r1, int $\ast$r2)
+\begin{DoxyCompactList}\small\item\em helper function to swap two integers \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structqueue}{queue}} $\ast$ \mbox{\hyperlink{PS-1_8c_a4842f135706c1989512d37dd2d1aac97}{init\+\_\+queue}} (\mbox{\hyperlink{structqueue}{queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em initialize the queue to store unused roll number \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PS-1_8c_a8ccd6305bf0fb0b5a7b8c4f9a306607d}{push}} (\mbox{\hyperlink{structqueue}{queue}} $\ast$q, int n)
+\begin{DoxyCompactList}\small\item\em insert the unused roll number in queue \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{PS-1_8c_a929eaf0d729b866014d273eb894bf2b1}{pop}} (\mbox{\hyperlink{structqueue}{queue}} $\ast$q)
+\begin{DoxyCompactList}\small\item\em get the unused roll number to use \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{PS-1_8c_a0153a7aacbce534b5082e57af31a4e48}{search\+\_\+queue}} (\mbox{\hyperlink{structqueue}{queue}} $\ast$q, int n)
+\begin{DoxyCompactList}\small\item\em helper function to to search whether given roll number is used or unused \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PS-1_8c_acdef7a1fd863a6d3770c1268cb06add3}{main}} ()
+\begin{DoxyCompactList}\small\item\em this main func @ return nothing \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structnode}{node}} $\ast$ \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}} = N\+U\+LL
+\item 
+\mbox{\hyperlink{structnode}{node}} $\ast$ \mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}} = N\+U\+LL
+\item 
+int \mbox{\hyperlink{PS-1_8c_a439227feff9d7f55384e8780cfc2eb82}{size}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+brief explanation of \mbox{\hyperlink{PS-1_8c}{P\+S-\/1.\+c}} from xn 
+
+\begin{DoxyAuthor}{Author}
+karanpreet Singh 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{PS-1_8c_a392fb874e547e582e9c66a08a1f23326}\label{PS-1_8c_a392fb874e547e582e9c66a08a1f23326}} 
+\index{PS-\/1.c@{PS-\/1.c}!MAX@{MAX}}
+\index{MAX@{MAX}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{MAX}{MAX}}
+{\footnotesize\ttfamily \#define M\+AX~13}
+
+
+
+Definition at line 12 of file P\+S-\/1.\+c.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{PS-1_8c_ae3925075f052290340ee4c1eb2a484e6}\label{PS-1_8c_ae3925075f052290340ee4c1eb2a484e6}} 
+\index{PS-\/1.c@{PS-\/1.c}!queue@{queue}}
+\index{queue@{queue}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{queue}{queue}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structqueue}{queue}}  \mbox{\hyperlink{structqueue}{queue}}}
+
+
+
+to store unused roll numbers 
+
+\mbox{\Hypertarget{PS-1_8c_ace29f146c273d2654669dc2c710603e2}\label{PS-1_8c_ace29f146c273d2654669dc2c710603e2}} 
+\index{PS-\/1.c@{PS-\/1.c}!node@{node}}
+\index{node@{node}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structnode}{node}}  \mbox{\hyperlink{structnode}{node}}}
+
+
+
+node to encapsulate individual student\textquotesingle{}s data 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{PS-1_8c_a235c4856e18be8f9d0338a4a3f8bab7c}\label{PS-1_8c_a235c4856e18be8f9d0338a4a3f8bab7c}} 
+\index{PS-\/1.c@{PS-\/1.c}!insert@{insert}}
+\index{insert@{insert}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{int}]{roll,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{dob,  }\item[{char $\ast$}]{addr,  }\item[{char $\ast$}]{phno }\end{DoxyParamCaption})}
+
+
+
+to insert the new data inyto doubly linked list 
+
+
+
+Definition at line 268 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{268                                                                  \{}
+\DoxyCodeLine{269     \mbox{\hyperlink{structnode}{node}} *nNode = \mbox{\hyperlink{PS-1_8c_a6578e01c6355b6a2425cd0c6c5c6db45}{newNode}}(\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}}, \mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}},\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}},\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}},\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}});}
+\DoxyCodeLine{270     \textcolor{keywordflow}{if} (\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}} == \mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}} \&\& \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}} == NULL)}
+\DoxyCodeLine{271     \{}
+\DoxyCodeLine{272        \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}} = \mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}} = nNode;}
+\DoxyCodeLine{273        \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = \mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = NULL;}
+\DoxyCodeLine{274        \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}-\/>\mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}} = \mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}}-\/>\mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}} = NULL;    }
+\DoxyCodeLine{275        \textcolor{keywordflow}{while} ((getchar()) != \textcolor{charliteral}{'\(\backslash\)n'});   }
+\DoxyCodeLine{276     \}}
+\DoxyCodeLine{277     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{278     \{}
+\DoxyCodeLine{279        \mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = nNode;}
+\DoxyCodeLine{280        nNode-\/>\mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}} = \mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}};}
+\DoxyCodeLine{281        \mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}} = nNode;}
+\DoxyCodeLine{282        \mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}};}
+\DoxyCodeLine{283        \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}-\/>\mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}} = \mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}};}
+\DoxyCodeLine{284        \mbox{\hyperlink{PS-1_8c_a4a4a143e1a7fa6bf90c3a799f74f9703}{sortByRollNumber}}();}
+\DoxyCodeLine{285        \textcolor{keywordflow}{while} ((getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}); }
+\DoxyCodeLine{286     \}}
+\DoxyCodeLine{287 \}}
+
+\end{DoxyCode}
+
+
+References node\+::addr, node\+::dob, first, last, node\+::name, new\+Node(), node\+::next, node\+::phno, node\+::prev, node\+::roll, and sort\+By\+Roll\+Number().
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{PS-1_8c_a6578e01c6355b6a2425cd0c6c5c6db45}\label{PS-1_8c_a6578e01c6355b6a2425cd0c6c5c6db45}} 
+\index{PS-\/1.c@{PS-\/1.c}!newNode@{newNode}}
+\index{newNode@{newNode}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{newNode()}{newNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnode}{node}} $\ast$ new\+Node (\begin{DoxyParamCaption}\item[{int}]{roll,  }\item[{char $\ast$}]{name,  }\item[{char $\ast$}]{dob,  }\item[{char $\ast$}]{addr,  }\item[{char $\ast$}]{phno }\end{DoxyParamCaption})}
+
+
+
+to initialize each node 
+
+
+
+Definition at line 256 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{256                                                                    \{}
+\DoxyCodeLine{257    \mbox{\hyperlink{structnode}{node}}* one\_node = (\mbox{\hyperlink{structnode}{node}}*)(malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structnode}{node}})));}
+\DoxyCodeLine{258    one\_node-\/>\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}}=\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}};}
+\DoxyCodeLine{259    strcpy(one\_node-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}},nome);}
+\DoxyCodeLine{260    strcpy(one\_node-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}},dobt);}
+\DoxyCodeLine{261    strcpy(one\_node-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}},adr);}
+\DoxyCodeLine{262    strcpy(one\_node-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}},phnu);}
+\DoxyCodeLine{263    one\_node-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} = one\_node;}
+\DoxyCodeLine{264    one\_node-\/>\mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}} = one\_node;}
+\DoxyCodeLine{265    \textcolor{keywordflow}{return} one\_node;}
+\DoxyCodeLine{266 \}}
+
+\end{DoxyCode}
+
+
+References node\+::addr, node\+::dob, node\+::name, node\+::next, node\+::phno, node\+::prev, and node\+::roll.
+
+
+
+Referenced by insert().
+
+\mbox{\Hypertarget{PS-1_8c_a3bcfd34802ff7b2faca2cf7405801678}\label{PS-1_8c_a3bcfd34802ff7b2faca2cf7405801678}} 
+\index{PS-\/1.c@{PS-\/1.c}!delete@{delete}}
+\index{delete@{delete}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{delete()}{delete()}}
+{\footnotesize\ttfamily void delete (\begin{DoxyParamCaption}\item[{int}]{roll,  }\item[{\mbox{\hyperlink{structqueue}{queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+to delete the node corresponding to given roll number 
+
+
+
+Definition at line 289 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{289                               \{}
+\DoxyCodeLine{290    \mbox{\hyperlink{structnode}{node}} *current;}
+\DoxyCodeLine{291    \mbox{\hyperlink{structnode}{node}} *\mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}};}
+\DoxyCodeLine{292    \mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}} = \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}};}
+\DoxyCodeLine{293    current= \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{294    \textcolor{keywordtype}{bool} b=\textcolor{keyword}{false};}
+\DoxyCodeLine{295    \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{296        \textcolor{keywordflow}{if}(current-\/>\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}} == \mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}})}
+\DoxyCodeLine{297        \{}
+\DoxyCodeLine{298            b=\textcolor{keyword}{true};}
+\DoxyCodeLine{299            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{300        \}}
+\DoxyCodeLine{301        current=current-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{302        \mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}}=\mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{303     \} \textcolor{keywordflow}{while}(current!=\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}});}
+\DoxyCodeLine{304     \textcolor{keywordflow}{if}(b\&\&current!=\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}})\{}
+\DoxyCodeLine{305        \mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}=current-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{306        current-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}}=\mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}};}
+\DoxyCodeLine{307        current-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}=NULL;}
+\DoxyCodeLine{308        current-\/>\mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}}=NULL;}
+\DoxyCodeLine{309        \mbox{\hyperlink{PS-1_8c_a8ccd6305bf0fb0b5a7b8c4f9a306607d}{push}}(q,\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}});}
+\DoxyCodeLine{310    \}}
+\DoxyCodeLine{311    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(current==\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}})\{}
+\DoxyCodeLine{312        \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}=\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{313        \mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}=\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}};}
+\DoxyCodeLine{314        \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}-\/>\mbox{\hyperlink{structnode_a7ee3d227c728ce18a86e43ebc301046e}{prev}}=\mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}};}
+\DoxyCodeLine{315    \}}
+\DoxyCodeLine{316    \textcolor{keywordflow}{else} printf(\textcolor{stringliteral}{"Roll is still unused\(\backslash\)n"});}
+\DoxyCodeLine{317 \}}
+
+\end{DoxyCode}
+
+
+References first, last, node\+::next, node\+::prev, push(), and node\+::roll.
+
+\mbox{\Hypertarget{PS-1_8c_aaad50dfc23d8e85c6373349849b85ae6}\label{PS-1_8c_aaad50dfc23d8e85c6373349849b85ae6}} 
+\index{PS-\/1.c@{PS-\/1.c}!search@{search}}
+\index{search@{search}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily void search (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+to search for student having given roll number 
+
+
+
+Definition at line 319 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{319                   \{}
+\DoxyCodeLine{320   \mbox{\hyperlink{structnode}{node}} *current;}
+\DoxyCodeLine{321   current = \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}};}
+\DoxyCodeLine{322   \textcolor{keywordtype}{bool} b=\textcolor{keyword}{false};}
+\DoxyCodeLine{323    \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{324        \textcolor{keywordtype}{int} p = current-\/>\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}};}
+\DoxyCodeLine{325        \textcolor{keywordflow}{if}(p==n)\{}
+\DoxyCodeLine{326            b= \textcolor{keyword}{true};}
+\DoxyCodeLine{327            \textcolor{keywordflow}{break};}
+\DoxyCodeLine{328        \}}
+\DoxyCodeLine{329        current=current-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{330    \}\textcolor{keywordflow}{while}(current!=\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}});}
+\DoxyCodeLine{331    \textcolor{keywordflow}{if}(b)\{}
+\DoxyCodeLine{332        printf(\textcolor{stringliteral}{"salad"});}
+\DoxyCodeLine{333         printf(\textcolor{stringliteral}{"name:\%s\(\backslash\)n"},current-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}});}
+\DoxyCodeLine{334         printf(\textcolor{stringliteral}{"address:\%s\(\backslash\)n"},current-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}});}
+\DoxyCodeLine{335         printf(\textcolor{stringliteral}{"dob:\%s\(\backslash\)n"},current-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}});}
+\DoxyCodeLine{336         printf(\textcolor{stringliteral}{"phone no:\%s\(\backslash\)n"}, current-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}});}
+\DoxyCodeLine{337    \}}
+\DoxyCodeLine{338    \textcolor{keywordflow}{else} printf(\textcolor{stringliteral}{"student with roll number does not exist"});}
+\DoxyCodeLine{339 \}}
+
+\end{DoxyCode}
+
+
+References node\+::addr, node\+::dob, first, node\+::name, node\+::next, node\+::phno, and node\+::roll.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{PS-1_8c_a200187ffd1c25041d20c0acb7b02a014}\label{PS-1_8c_a200187ffd1c25041d20c0acb7b02a014}} 
+\index{PS-\/1.c@{PS-\/1.c}!modify@{modify}}
+\index{modify@{modify}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{modify()}{modify()}}
+{\footnotesize\ttfamily void modify (\begin{DoxyParamCaption}\item[{int}]{roll }\end{DoxyParamCaption})}
+
+
+
+modify the information 
+
+
+
+Definition at line 341 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{341                      \{}
+\DoxyCodeLine{342     \mbox{\hyperlink{structnode}{node}} *current;}
+\DoxyCodeLine{343     current = \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}};}
+\DoxyCodeLine{344     \textcolor{keywordtype}{bool} b=\textcolor{keyword}{false};}
+\DoxyCodeLine{345     \textcolor{keywordflow}{do} \{}
+\DoxyCodeLine{346         \textcolor{keywordflow}{if}(current-\/>\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}} == \mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}})}
+\DoxyCodeLine{347         \{}
+\DoxyCodeLine{348             b=\textcolor{keyword}{true};}
+\DoxyCodeLine{349             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{350         \}}
+\DoxyCodeLine{351         current=current-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{352     \}\textcolor{keywordflow}{while}(current!=\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}});}
+\DoxyCodeLine{353     \textcolor{keywordflow}{if}(b)\{}
+\DoxyCodeLine{354         printf(\textcolor{stringliteral}{"enter  name\(\backslash\)n"});}
+\DoxyCodeLine{355         scanf(\textcolor{stringliteral}{"\%[\string^\(\backslash\)n]s"},current-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}});}
+\DoxyCodeLine{356         \textcolor{keywordflow}{while} ((getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}); }
+\DoxyCodeLine{357         printf(\textcolor{stringliteral}{"enter  phone number\(\backslash\)n"});}
+\DoxyCodeLine{358         scanf(\textcolor{stringliteral}{"\%s"},current-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}});}
+\DoxyCodeLine{359         \textcolor{keywordflow}{while} ((getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}); }
+\DoxyCodeLine{360         printf(\textcolor{stringliteral}{"enter  address\(\backslash\)n"});}
+\DoxyCodeLine{361         scanf(\textcolor{stringliteral}{"\%[\string^\(\backslash\)n]s"},current-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}});}
+\DoxyCodeLine{362         \textcolor{keywordflow}{while} ((getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}); }
+\DoxyCodeLine{363         printf(\textcolor{stringliteral}{"enter dob\(\backslash\)n"});}
+\DoxyCodeLine{364         scanf(\textcolor{stringliteral}{"\%s"},current-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}});}
+\DoxyCodeLine{365         \textcolor{keywordflow}{while} ((getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}); }
+\DoxyCodeLine{366     \}}
+\DoxyCodeLine{367     \textcolor{keywordflow}{else} printf(\textcolor{stringliteral}{"roll number is still unused"});}
+\DoxyCodeLine{368 \}}
+
+\end{DoxyCode}
+
+
+References node\+::addr, node\+::dob, first, node\+::name, node\+::next, node\+::phno, and node\+::roll.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{PS-1_8c_a2f736094bbaa598f70c3e241bad4a1cc}\label{PS-1_8c_a2f736094bbaa598f70c3e241bad4a1cc}} 
+\index{PS-\/1.c@{PS-\/1.c}!printList@{printList}}
+\index{printList@{printList}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{printList()}{printList()}}
+{\footnotesize\ttfamily void print\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+to print the list of students 
+
+
+
+Definition at line 411 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{411                 \{}
+\DoxyCodeLine{412     \mbox{\hyperlink{structnode}{node}} *current;}
+\DoxyCodeLine{413     current =\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}};}
+\DoxyCodeLine{414     \textcolor{keywordflow}{do}\{}
+\DoxyCodeLine{415         printf(\textcolor{stringliteral}{"roll no:\%d\(\backslash\)n"},current-\/>\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}});}
+\DoxyCodeLine{416         printf(\textcolor{stringliteral}{"name:\%s\(\backslash\)n"},current-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}});}
+\DoxyCodeLine{417         printf(\textcolor{stringliteral}{"address:\%s\(\backslash\)n"},current-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}});}
+\DoxyCodeLine{418         printf(\textcolor{stringliteral}{"dob:\%s\(\backslash\)n"},current-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}});}
+\DoxyCodeLine{419         printf(\textcolor{stringliteral}{"phone no:\%s\(\backslash\)n"}, current-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}});}
+\DoxyCodeLine{420         current=current-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}};}
+\DoxyCodeLine{421     \}\textcolor{keywordflow}{while}(current!=\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}\&\&\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}!=NULL);}
+\DoxyCodeLine{422      \textcolor{keywordflow}{if}(\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}!=\mbox{\hyperlink{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}{last}})}
+\DoxyCodeLine{423      \mbox{\hyperlink{PS-1_8c_a4a4a143e1a7fa6bf90c3a799f74f9703}{sortByRollNumber}}();}
+\DoxyCodeLine{424 \}}
+
+\end{DoxyCode}
+
+
+References node\+::addr, node\+::dob, first, last, node\+::name, node\+::next, node\+::phno, node\+::roll, and sort\+By\+Roll\+Number().
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{PS-1_8c_a16af310ad608852c74a4b3c1f5c694c9}\label{PS-1_8c_a16af310ad608852c74a4b3c1f5c694c9}} 
+\index{PS-\/1.c@{PS-\/1.c}!sortByName@{sortByName}}
+\index{sortByName@{sortByName}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{sortByName()}{sortByName()}}
+{\footnotesize\ttfamily void sort\+By\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+sort the list according to aphabetical order 
+
+
+
+Definition at line 370 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{370                  \{}
+\DoxyCodeLine{371     \textcolor{keywordtype}{int} swapped, i; }
+\DoxyCodeLine{372     \textcolor{keyword}{struct }\mbox{\hyperlink{structnode}{node}} *ptr1; }
+\DoxyCodeLine{373     \textcolor{keyword}{struct }\mbox{\hyperlink{structnode}{node}} *lptr = \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}};    }
+\DoxyCodeLine{374     \textcolor{keywordflow}{if} (\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}} == NULL) }
+\DoxyCodeLine{375         \textcolor{keywordflow}{return};   }
+\DoxyCodeLine{376     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{377     \{ }
+\DoxyCodeLine{378         swapped = 0; }
+\DoxyCodeLine{379         ptr1 = \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}; }
+\DoxyCodeLine{380         \textcolor{keywordflow}{while} (ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} != lptr) }
+\DoxyCodeLine{381         \{ }
+\DoxyCodeLine{382             \textcolor{keywordtype}{char}* n1=ptr1-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}};}
+\DoxyCodeLine{383             \textcolor{keywordtype}{char}* n2=ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}};}
+\DoxyCodeLine{384             \textcolor{keywordflow}{if} (strcmp(n1,n2)>0) }
+\DoxyCodeLine{385             \{ }
+\DoxyCodeLine{386                 \mbox{\hyperlink{PS-1_8c_a4c72369c9202f982163ec9fed42d1b03}{swap\_int}}(\&(ptr1-\/>\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}}), \&(ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}})); }
+\DoxyCodeLine{387                 \textcolor{keywordtype}{char} temp[128];}
+\DoxyCodeLine{388                 \textcolor{keywordtype}{char} temp2[1024];}
+\DoxyCodeLine{389                 \textcolor{keywordtype}{char} temp3[20];}
+\DoxyCodeLine{390                 strncpy(temp,ptr1-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}},128);}
+\DoxyCodeLine{391                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}},ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}},128);}
+\DoxyCodeLine{392                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}},temp,128);}
+\DoxyCodeLine{393                 strncpy(temp2,ptr1-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}},1024);}
+\DoxyCodeLine{394                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}},ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}},1024);}
+\DoxyCodeLine{395                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}},temp2,1024);}
+\DoxyCodeLine{396                 strncpy(temp,ptr1-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}},128);}
+\DoxyCodeLine{397                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}},ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}},128);}
+\DoxyCodeLine{398                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}},temp,128);}
+\DoxyCodeLine{399                 strncpy(temp,ptr1-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}},20);}
+\DoxyCodeLine{400                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}},ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}},20);}
+\DoxyCodeLine{401                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}},temp,20);}
+\DoxyCodeLine{402                 swapped = 1; }
+\DoxyCodeLine{403             \} }
+\DoxyCodeLine{404             ptr1 = ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}; }
+\DoxyCodeLine{405         \} }
+\DoxyCodeLine{406         lptr = ptr1; }
+\DoxyCodeLine{407     \} }
+\DoxyCodeLine{408     \textcolor{keywordflow}{while} (swapped); }
+\DoxyCodeLine{409 \}}
+
+\end{DoxyCode}
+
+
+References node\+::addr, node\+::dob, first, node\+::name, node\+::next, node\+::phno, node\+::roll, and swap\+\_\+int().
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{PS-1_8c_a4a4a143e1a7fa6bf90c3a799f74f9703}\label{PS-1_8c_a4a4a143e1a7fa6bf90c3a799f74f9703}} 
+\index{PS-\/1.c@{PS-\/1.c}!sortByRollNumber@{sortByRollNumber}}
+\index{sortByRollNumber@{sortByRollNumber}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{sortByRollNumber()}{sortByRollNumber()}}
+{\footnotesize\ttfamily void sort\+By\+Roll\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+sort the list according to roll number 
+
+
+
+Definition at line 426 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{426                         \{ }
+\DoxyCodeLine{427     \textcolor{keywordtype}{int} swapped, i; }
+\DoxyCodeLine{428      \mbox{\hyperlink{structnode}{node}} *ptr1; }
+\DoxyCodeLine{429      \mbox{\hyperlink{structnode}{node}} *lptr = \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}; }
+\DoxyCodeLine{430     \textcolor{keywordflow}{if} (\mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}} == NULL) }
+\DoxyCodeLine{431         \textcolor{keywordflow}{return};   }
+\DoxyCodeLine{432     \textcolor{keywordflow}{do}}
+\DoxyCodeLine{433     \{ }
+\DoxyCodeLine{434         swapped = 0; }
+\DoxyCodeLine{435         ptr1 = \mbox{\hyperlink{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}{first}}; }
+\DoxyCodeLine{436         \textcolor{keywordflow}{while} (ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}} != lptr) }
+\DoxyCodeLine{437         \{ }
+\DoxyCodeLine{438             \textcolor{keywordflow}{if} ((ptr1-\/>\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}} > ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}})) }
+\DoxyCodeLine{439             \{  }
+\DoxyCodeLine{440                 \mbox{\hyperlink{PS-1_8c_a4c72369c9202f982163ec9fed42d1b03}{swap\_int}}(\&(ptr1-\/>\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}}), \&(ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a701f7b0bf07919c4b3bf83f4abe34372}{roll}})); }
+\DoxyCodeLine{441                 \textcolor{keywordtype}{char} temp[128];}
+\DoxyCodeLine{442                 \textcolor{keywordtype}{char} temp2[1024];}
+\DoxyCodeLine{443                 \textcolor{keywordtype}{char} temp3[20];}
+\DoxyCodeLine{444                 strncpy(temp,ptr1-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}},128);}
+\DoxyCodeLine{445                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}},ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}},128);}
+\DoxyCodeLine{446                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a927074d29c4ed217600018a9c7e8beb6}{name}},temp,128);}
+\DoxyCodeLine{447                 strncpy(temp2,ptr1-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}},1024);}
+\DoxyCodeLine{448                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}},ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}},1024);}
+\DoxyCodeLine{449                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_af9bb16570210fb3b9ccdd3b984bfea71}{addr}},temp2,1024);}
+\DoxyCodeLine{450                 strncpy(temp,ptr1-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}},128);}
+\DoxyCodeLine{451                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}},ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}},128);}
+\DoxyCodeLine{452                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_a27af97d1a3bf7870c4f7d89670420877}{dob}},temp,128);}
+\DoxyCodeLine{453                 strncpy(temp,ptr1-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}},20);}
+\DoxyCodeLine{454                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}},ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}},20);}
+\DoxyCodeLine{455                 strncpy(ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}-\/>\mbox{\hyperlink{structnode_ac26d226e1daa751841ece82b19e7cc4a}{phno}},temp,20);}
+\DoxyCodeLine{456                 swapped = 1; }
+\DoxyCodeLine{457             \} }
+\DoxyCodeLine{458             ptr1 = ptr1-\/>\mbox{\hyperlink{structnode_aa3e8aa83f864292b5a01210f4453fcc0}{next}}; }
+\DoxyCodeLine{459         \} }
+\DoxyCodeLine{460         lptr = ptr1; }
+\DoxyCodeLine{461     \} }
+\DoxyCodeLine{462     \textcolor{keywordflow}{while} (swapped); }
+\DoxyCodeLine{463 \} }
+
+\end{DoxyCode}
+
+
+References node\+::addr, node\+::dob, first, node\+::name, node\+::next, node\+::phno, node\+::roll, and swap\+\_\+int().
+
+
+
+Referenced by insert(), and print\+List().
+
+\mbox{\Hypertarget{PS-1_8c_a4c72369c9202f982163ec9fed42d1b03}\label{PS-1_8c_a4c72369c9202f982163ec9fed42d1b03}} 
+\index{PS-\/1.c@{PS-\/1.c}!swap\_int@{swap\_int}}
+\index{swap\_int@{swap\_int}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{swap\_int()}{swap\_int()}}
+{\footnotesize\ttfamily void swap\+\_\+int (\begin{DoxyParamCaption}\item[{int $\ast$}]{r1,  }\item[{int $\ast$}]{r2 }\end{DoxyParamCaption})}
+
+
+
+helper function to swap two integers 
+
+
+
+Definition at line 465 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{465                               \{}
+\DoxyCodeLine{466     \textcolor{keywordtype}{int} temp=*r1;}
+\DoxyCodeLine{467     *r1=*r2;}
+\DoxyCodeLine{468     *r2=temp;}
+\DoxyCodeLine{469 \}}
+
+\end{DoxyCode}
+
+
+Referenced by sort\+By\+Name(), and sort\+By\+Roll\+Number().
+
+\mbox{\Hypertarget{PS-1_8c_a4842f135706c1989512d37dd2d1aac97}\label{PS-1_8c_a4842f135706c1989512d37dd2d1aac97}} 
+\index{PS-\/1.c@{PS-\/1.c}!init\_queue@{init\_queue}}
+\index{init\_queue@{init\_queue}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{init\_queue()}{init\_queue()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structqueue}{queue}} $\ast$ init\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structqueue}{queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+initialize the queue to store unused roll number 
+
+
+
+Definition at line 74 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{74                            \{}
+\DoxyCodeLine{75     q-\/>\mbox{\hyperlink{structqueue_a473ab80725514ce07817f87ed1fb136f}{rear}}=-\/1;}
+\DoxyCodeLine{76     q-\/>\mbox{\hyperlink{structqueue_a6c50c7c8bcd9c5962996ed8b1be8771c}{front}}=-\/1;}
+\DoxyCodeLine{77     q-\/>\mbox{\hyperlink{structqueue_afb9096840ba43e124b3a58648db557cc}{size}}=0;}
+\DoxyCodeLine{78     \textcolor{keywordflow}{return} q;}
+\DoxyCodeLine{79 \}}
+
+\end{DoxyCode}
+
+
+References queue\+::front, queue\+::rear, and queue\+::size.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{PS-1_8c_a8ccd6305bf0fb0b5a7b8c4f9a306607d}\label{PS-1_8c_a8ccd6305bf0fb0b5a7b8c4f9a306607d}} 
+\index{PS-\/1.c@{PS-\/1.c}!push@{push}}
+\index{push@{push}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily void push (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structqueue}{queue}} $\ast$}]{q,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+insert the unused roll number in queue 
+
+
+
+Definition at line 81 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{81                          \{}
+\DoxyCodeLine{82     \textcolor{keywordflow}{if}(q-\/>\mbox{\hyperlink{structqueue_a473ab80725514ce07817f87ed1fb136f}{rear}}==-\/1\&\&q-\/>\mbox{\hyperlink{structqueue_a6c50c7c8bcd9c5962996ed8b1be8771c}{front}}==-\/1)\{}
+\DoxyCodeLine{83         q-\/>\mbox{\hyperlink{structqueue_a10c922fe79aea10d78d423ebc8cd5e0e}{arr}}[0]=n;}
+\DoxyCodeLine{84         q-\/>\mbox{\hyperlink{structqueue_a6c50c7c8bcd9c5962996ed8b1be8771c}{front}}=q-\/>\mbox{\hyperlink{structqueue_a473ab80725514ce07817f87ed1fb136f}{rear}}=0;}
+\DoxyCodeLine{85         q-\/>\mbox{\hyperlink{structqueue_afb9096840ba43e124b3a58648db557cc}{size}}++;}
+\DoxyCodeLine{86     \}}
+\DoxyCodeLine{87     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{88     \{}
+\DoxyCodeLine{89         q-\/>\mbox{\hyperlink{structqueue_a10c922fe79aea10d78d423ebc8cd5e0e}{arr}}[++q-\/>\mbox{\hyperlink{structqueue_a473ab80725514ce07817f87ed1fb136f}{rear}}]=n;}
+\DoxyCodeLine{90         q-\/>\mbox{\hyperlink{structqueue_afb9096840ba43e124b3a58648db557cc}{size}}++;}
+\DoxyCodeLine{91     \}}
+\DoxyCodeLine{92 \}}
+
+\end{DoxyCode}
+
+
+References queue\+::arr, queue\+::front, queue\+::rear, and queue\+::size.
+
+
+
+Referenced by delete(), and main().
+
+\mbox{\Hypertarget{PS-1_8c_a929eaf0d729b866014d273eb894bf2b1}\label{PS-1_8c_a929eaf0d729b866014d273eb894bf2b1}} 
+\index{PS-\/1.c@{PS-\/1.c}!pop@{pop}}
+\index{pop@{pop}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily int pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structqueue}{queue}} $\ast$}]{q }\end{DoxyParamCaption})}
+
+
+
+get the unused roll number to use 
+
+
+
+Definition at line 94 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{94                  \{}
+\DoxyCodeLine{95     \textcolor{keywordflow}{if}(q-\/>\mbox{\hyperlink{structqueue_a473ab80725514ce07817f87ed1fb136f}{rear}}==-\/1\&\&q-\/>\mbox{\hyperlink{structqueue_a6c50c7c8bcd9c5962996ed8b1be8771c}{front}}==-\/1)}
+\DoxyCodeLine{96         \textcolor{keywordflow}{return} -\/1; }
+\DoxyCodeLine{97     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(q-\/>\mbox{\hyperlink{structqueue_afb9096840ba43e124b3a58648db557cc}{size}}==1) \{}
+\DoxyCodeLine{98         q-\/>\mbox{\hyperlink{structqueue_a473ab80725514ce07817f87ed1fb136f}{rear}}=-\/1;}
+\DoxyCodeLine{99         q-\/>\mbox{\hyperlink{structqueue_a6c50c7c8bcd9c5962996ed8b1be8771c}{front}}=-\/1;}
+\DoxyCodeLine{100         \textcolor{keywordflow}{return} q-\/>\mbox{\hyperlink{structqueue_a10c922fe79aea10d78d423ebc8cd5e0e}{arr}}[0];}
+\DoxyCodeLine{101     \}}
+\DoxyCodeLine{102     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{103         \textcolor{keywordtype}{int} num = q-\/>\mbox{\hyperlink{structqueue_a10c922fe79aea10d78d423ebc8cd5e0e}{arr}}[0];}
+\DoxyCodeLine{104         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1;i<q-\/>\mbox{\hyperlink{structqueue_afb9096840ba43e124b3a58648db557cc}{size}};i++)}
+\DoxyCodeLine{105             q-\/>\mbox{\hyperlink{structqueue_a10c922fe79aea10d78d423ebc8cd5e0e}{arr}}[i-\/1]=q-\/>\mbox{\hyperlink{structqueue_a10c922fe79aea10d78d423ebc8cd5e0e}{arr}}[i]; }
+\DoxyCodeLine{106         q-\/>\mbox{\hyperlink{structqueue_afb9096840ba43e124b3a58648db557cc}{size}}-\/-\/;}
+\DoxyCodeLine{107         q-\/>\mbox{\hyperlink{structqueue_a473ab80725514ce07817f87ed1fb136f}{rear}}-\/-\/;}
+\DoxyCodeLine{108         \textcolor{keywordflow}{return} num;    }
+\DoxyCodeLine{109     \}}
+\DoxyCodeLine{110 \}}
+
+\end{DoxyCode}
+
+
+References queue\+::arr, queue\+::front, queue\+::rear, and queue\+::size.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{PS-1_8c_a0153a7aacbce534b5082e57af31a4e48}\label{PS-1_8c_a0153a7aacbce534b5082e57af31a4e48}} 
+\index{PS-\/1.c@{PS-\/1.c}!search\_queue@{search\_queue}}
+\index{search\_queue@{search\_queue}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{search\_queue()}{search\_queue()}}
+{\footnotesize\ttfamily bool search\+\_\+queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structqueue}{queue}} $\ast$}]{q,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+helper function to to search whether given roll number is used or unused 
+
+
+
+Definition at line 112 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{112                                   \{}
+\DoxyCodeLine{113     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<\mbox{\hyperlink{PS-1_8c_a439227feff9d7f55384e8780cfc2eb82}{size}};i++)\{}
+\DoxyCodeLine{114         \textcolor{keywordflow}{if}(q-\/>\mbox{\hyperlink{structqueue_a10c922fe79aea10d78d423ebc8cd5e0e}{arr}}[i]==n)}
+\DoxyCodeLine{115           \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{116     \}}
+\DoxyCodeLine{117     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{118 \}}
+
+\end{DoxyCode}
+
+
+References queue\+::arr, and size.
+
+\mbox{\Hypertarget{PS-1_8c_acdef7a1fd863a6d3770c1268cb06add3}\label{PS-1_8c_acdef7a1fd863a6d3770c1268cb06add3}} 
+\index{PS-\/1.c@{PS-\/1.c}!main@{main}}
+\index{main@{main}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily void main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this main func @ return nothing 
+
+declare the queue
+
+declare doubly linked list
+
+choice for operation in switch menu
+
+taking pointer to file
+
+storing name for 13 students
+
+storing address for 13 students
+
+storing date of birth for 13 students
+
+storing phone number for 13 students
+
+buffer for getting individual line of the opened file
+
+skip the first line
+
+get each line until reaches end of file
+
+get first element of each line
+
+to mark start and end of cpu clock
+
+store the time taken by cpu to perform operation
+
+delete the data from the list
+
+search for student with given roll number
+
+modify the current values of data inside the node
+
+sort the list in dictionary order
+
+print the list
+
+Definition at line 125 of file P\+S-\/1.\+c.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{125             \{}
+\DoxyCodeLine{126     \mbox{\hyperlink{structqueue}{queue}} unusedRoll; }
+\DoxyCodeLine{127     \mbox{\hyperlink{PS-1_8c_a4842f135706c1989512d37dd2d1aac97}{init\_queue}}(\&unusedRoll);}
+\DoxyCodeLine{128     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<13;i++)}
+\DoxyCodeLine{129         \mbox{\hyperlink{PS-1_8c_a8ccd6305bf0fb0b5a7b8c4f9a306607d}{push}}(\&unusedRoll,101+i);}
+\DoxyCodeLine{130     \mbox{\hyperlink{structnode}{node}} students; }
+\DoxyCodeLine{131     \textcolor{keywordtype}{int} op; }
+\DoxyCodeLine{132     }
+\DoxyCodeLine{133     FILE *stream = fopen(\textcolor{stringliteral}{"StudentData.csv"}, \textcolor{stringliteral}{"r"}); }
+\DoxyCodeLine{134     \textcolor{keywordtype}{char} **name\_data = (\textcolor{keywordtype}{char}**)malloc(13 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}*)); }
+\DoxyCodeLine{135     \textcolor{keywordtype}{char} **address =(\textcolor{keywordtype}{char}**)malloc(13 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}*)); }
+\DoxyCodeLine{136     \textcolor{keywordtype}{char} **dtob = (\textcolor{keywordtype}{char}**)malloc(13 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}*)); }
+\DoxyCodeLine{137     \textcolor{keywordtype}{char} **phone = (\textcolor{keywordtype}{char}**)malloc(13 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}*)); }
+\DoxyCodeLine{138     \textcolor{keywordtype}{char} *line = (\textcolor{keywordtype}{char}*)malloc(1024 * \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char})); }
+\DoxyCodeLine{139     \textcolor{keywordtype}{int} i=0; }
+\DoxyCodeLine{140     fgets(line, 1024, stream); }
+\DoxyCodeLine{141     \textcolor{keywordtype}{char}* token=strtok(line, \textcolor{stringliteral}{","});}
+\DoxyCodeLine{142     token=strtok(NULL,\textcolor{stringliteral}{"\(\backslash\)n"});}
+\DoxyCodeLine{143         \textcolor{keywordflow}{while} (fgets(line, 1024, stream)) }
+\DoxyCodeLine{144         \{}
+\DoxyCodeLine{145             token =  strtok(line, \textcolor{stringliteral}{","}); }
+\DoxyCodeLine{146             token = strtok(NULL, \textcolor{stringliteral}{","}); }
+\DoxyCodeLine{147             name\_data[i]=(\textcolor{keywordtype}{char}*)malloc(strlen(token)*\textcolor{keyword}{sizeof}(char));}
+\DoxyCodeLine{148             strcpy(name\_data[i],token);}
+\DoxyCodeLine{149             token = strtok(NULL, \textcolor{stringliteral}{","});}
+\DoxyCodeLine{150             dtob[i]=(\textcolor{keywordtype}{char}*)malloc(strlen(token)*\textcolor{keyword}{sizeof}(char));}
+\DoxyCodeLine{151             strcpy(dtob[i],token);}
+\DoxyCodeLine{152             token = strtok(NULL, \textcolor{stringliteral}{"\(\backslash\)""});}
+\DoxyCodeLine{153             address[i]=(\textcolor{keywordtype}{char}*)malloc(strlen(token)*\textcolor{keyword}{sizeof}(char));}
+\DoxyCodeLine{154             strcpy(address[i],token);}
+\DoxyCodeLine{155             token = strtok(NULL, \textcolor{stringliteral}{",[\string^\(\backslash\)n"});}
+\DoxyCodeLine{156             phone[i]=(\textcolor{keywordtype}{char}*)malloc(strlen(token)*\textcolor{keyword}{sizeof}(char));}
+\DoxyCodeLine{157             strcpy(phone[i],token);}
+\DoxyCodeLine{158             printf(\textcolor{stringliteral}{"\%s\(\backslash\)n"},phone[i]);}
+\DoxyCodeLine{159             i++;}
+\DoxyCodeLine{160         \}}
+\DoxyCodeLine{161     clock\_t start, end; }
+\DoxyCodeLine{162     \textcolor{keywordtype}{double} cpu\_time; }
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     \textcolor{keywordflow}{while} (1) \{}
+\DoxyCodeLine{165         printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n1.Insert\(\backslash\)n2.Delete\(\backslash\)n3.Search\(\backslash\)n4.modify\(\backslash\)n5.sort\(\backslash\)n6.PrintList\(\backslash\)n\(\backslash\)nEnter ur choice"});}
+\DoxyCodeLine{166         printf(\textcolor{stringliteral}{"\(\backslash\)nenter -\/1 to exit\(\backslash\)n"});}
+\DoxyCodeLine{167         scanf(\textcolor{stringliteral}{"\%d"},\&op);}
+\DoxyCodeLine{168         \textcolor{keywordflow}{while} ((getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}); }
+\DoxyCodeLine{169         \textcolor{keywordflow}{switch}(op)\{}
+\DoxyCodeLine{170             \textcolor{keywordflow}{case} 1: \textcolor{comment}{// ! insert the student's data into the list}}
+\DoxyCodeLine{171                     printf(\textcolor{stringliteral}{"operation insert\(\backslash\)n"});}
+\DoxyCodeLine{172                     printf(\textcolor{stringliteral}{"Enter number  for the student you want to insert\(\backslash\)n"});}
+\DoxyCodeLine{173                     \textcolor{keywordtype}{int} num;}
+\DoxyCodeLine{174                     \textcolor{keywordtype}{int} rollnum;}
+\DoxyCodeLine{175                     scanf(\textcolor{stringliteral}{"\%d"},\&num);}
+\DoxyCodeLine{176                     \textcolor{keywordflow}{while} ((getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}); }
+\DoxyCodeLine{177                     start = clock ();}
+\DoxyCodeLine{178                     \textcolor{keywordflow}{if}((rollnum=\mbox{\hyperlink{PS-1_8c_a929eaf0d729b866014d273eb894bf2b1}{pop}}(\&unusedRoll))!=-\/1)}
+\DoxyCodeLine{179                        \mbox{\hyperlink{PS-1_8c_a235c4856e18be8f9d0338a4a3f8bab7c}{insert}}(rollnum,name\_data[num-\/1],dtob[num-\/1],address[num-\/1],phone[num-\/1]);}
+\DoxyCodeLine{180                     \textcolor{keywordflow}{else} }
+\DoxyCodeLine{181                        printf(\textcolor{stringliteral}{"linked list in full\(\backslash\)n"});}
+\DoxyCodeLine{182                     printf(\textcolor{stringliteral}{"operation completed\(\backslash\)n"}); }
+\DoxyCodeLine{183                     end = clock();}
+\DoxyCodeLine{184                     cpu\_time = ((double) (end -\/ start)) / CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{185                     printf(\textcolor{stringliteral}{"cpu time used \%f"}, cpu\_time);  }
+\DoxyCodeLine{186                     \textcolor{keywordflow}{break}; }
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188             \textcolor{keywordflow}{case} 2: }
+\DoxyCodeLine{189                     printf(\textcolor{stringliteral}{"operation delete\(\backslash\)n"});}
+\DoxyCodeLine{190                     printf(\textcolor{stringliteral}{"enter roll to delete\(\backslash\)n"}) ;}
+\DoxyCodeLine{191                     \textcolor{keywordtype}{int} rolln;}
+\DoxyCodeLine{192                     scanf(\textcolor{stringliteral}{"\%d"},\&rolln);}
+\DoxyCodeLine{193                     \textcolor{keywordflow}{while} ((getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}); }
+\DoxyCodeLine{194                     start = clock ();}
+\DoxyCodeLine{195                     \textcolor{keyword}{delete}(rolln,\&unusedRoll); }
+\DoxyCodeLine{196                     printf(\textcolor{stringliteral}{"operation completed\(\backslash\)n"}); }
+\DoxyCodeLine{197                     end = clock();}
+\DoxyCodeLine{198                     cpu\_time = ((double) (end -\/ start)) / CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{199                     printf(\textcolor{stringliteral}{"cpu time used \%f"}, cpu\_time);  }
+\DoxyCodeLine{200                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202             \textcolor{keywordflow}{case} 3: }
+\DoxyCodeLine{203                     printf(\textcolor{stringliteral}{"operation search\(\backslash\)n"});}
+\DoxyCodeLine{204                     printf(\textcolor{stringliteral}{"enter roll number to search for:\(\backslash\)n"});}
+\DoxyCodeLine{205                     \textcolor{keywordtype}{int} rollnumber;}
+\DoxyCodeLine{206                     scanf(\textcolor{stringliteral}{"\%d"},\&rollnumber);}
+\DoxyCodeLine{207                     \textcolor{keywordflow}{while} ((getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}); }
+\DoxyCodeLine{208                     start = clock ();}
+\DoxyCodeLine{209                     \mbox{\hyperlink{PS-1_8c_aaad50dfc23d8e85c6373349849b85ae6}{search}}(rollnumber);}
+\DoxyCodeLine{210                     printf(\textcolor{stringliteral}{"operation completed"}); }
+\DoxyCodeLine{211                     end = clock();}
+\DoxyCodeLine{212                     cpu\_time = ((double) (end -\/ start)) / CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{213                     printf(\textcolor{stringliteral}{"cpu time used \%f"}, cpu\_time);                  }
+\DoxyCodeLine{214                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{215 }
+\DoxyCodeLine{216             \textcolor{keywordflow}{case} 4: }
+\DoxyCodeLine{217                     printf(\textcolor{stringliteral}{"operation modify"});}
+\DoxyCodeLine{218                     \textcolor{keywordtype}{int} num\_in;}
+\DoxyCodeLine{219                     scanf(\textcolor{stringliteral}{"\%d"},\&num\_in);}
+\DoxyCodeLine{220                     \textcolor{keywordflow}{while} ((getchar()) != \textcolor{charliteral}{'\(\backslash\)n'}); }
+\DoxyCodeLine{221                     start = clock ();}
+\DoxyCodeLine{222                     \mbox{\hyperlink{PS-1_8c_a200187ffd1c25041d20c0acb7b02a014}{modify}}(num\_in);}
+\DoxyCodeLine{223                     printf(\textcolor{stringliteral}{"operation completed"});}
+\DoxyCodeLine{224                     end = clock();}
+\DoxyCodeLine{225                     cpu\_time = ((double) (end -\/ start)) / CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{226                     printf(\textcolor{stringliteral}{"cpu time used \%f"}, cpu\_time); }
+\DoxyCodeLine{227                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229             \textcolor{keywordflow}{case} 5: }
+\DoxyCodeLine{230                     printf(\textcolor{stringliteral}{"operation sort by name"});}
+\DoxyCodeLine{231                     start = clock ();}
+\DoxyCodeLine{232                     \mbox{\hyperlink{PS-1_8c_a16af310ad608852c74a4b3c1f5c694c9}{sortByName}}();}
+\DoxyCodeLine{233                     printf(\textcolor{stringliteral}{"operation completed"});}
+\DoxyCodeLine{234                     end = clock();}
+\DoxyCodeLine{235                     cpu\_time = ((double) (end -\/ start)) / CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{236                     printf(\textcolor{stringliteral}{"cpu time used \%f"}, cpu\_time);}
+\DoxyCodeLine{237                     \textcolor{keywordflow}{break};    }
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239             \textcolor{keywordflow}{case} 6: }
+\DoxyCodeLine{240                     printf(\textcolor{stringliteral}{"operation print"});}
+\DoxyCodeLine{241                     start = clock ();}
+\DoxyCodeLine{242                     \mbox{\hyperlink{PS-1_8c_a2f736094bbaa598f70c3e241bad4a1cc}{printList}}();}
+\DoxyCodeLine{243                     printf(\textcolor{stringliteral}{"operation completed"});   }
+\DoxyCodeLine{244                     end = clock();}
+\DoxyCodeLine{245                     cpu\_time = ((double) (end -\/ start)) / CLOCKS\_PER\_SEC;}
+\DoxyCodeLine{246                     printf(\textcolor{stringliteral}{"cpu time used \%f"}, cpu\_time); }
+\DoxyCodeLine{247                     \textcolor{keywordflow}{break};   }
+\DoxyCodeLine{248                                   }
+\DoxyCodeLine{249             \textcolor{keywordflow}{default}: printf(\textcolor{stringliteral}{"wrong choice"});            }
+\DoxyCodeLine{250         \} }
+\DoxyCodeLine{251         \textcolor{keywordflow}{if}(op==-\/1)}
+\DoxyCodeLine{252         \textcolor{keywordflow}{break};}
+\DoxyCodeLine{253     \}    }
+\DoxyCodeLine{254 \}}
+
+\end{DoxyCode}
+
+
+References init\+\_\+queue(), insert(), modify(), pop(), print\+List(), push(), search(), and sort\+By\+Name().
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}\label{PS-1_8c_a02b4428208fd0060bb54d5bb726702d4}} 
+\index{PS-\/1.c@{PS-\/1.c}!first@{first}}
+\index{first@{first}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{first}{first}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnode}{node}}$\ast$ first = N\+U\+LL}
+
+
+
+Definition at line 71 of file P\+S-\/1.\+c.
+
+
+
+Referenced by delete(), insert(), modify(), print\+List(), search(), sort\+By\+Name(), and sort\+By\+Roll\+Number().
+
+\mbox{\Hypertarget{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}\label{PS-1_8c_a568941dcbf5e090b13c8402de0b3da61}} 
+\index{PS-\/1.c@{PS-\/1.c}!last@{last}}
+\index{last@{last}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{last}{last}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structnode}{node}} $\ast$ last = N\+U\+LL}
+
+
+
+Definition at line 71 of file P\+S-\/1.\+c.
+
+
+
+Referenced by delete(), insert(), and print\+List().
+
+\mbox{\Hypertarget{PS-1_8c_a439227feff9d7f55384e8780cfc2eb82}\label{PS-1_8c_a439227feff9d7f55384e8780cfc2eb82}} 
+\index{PS-\/1.c@{PS-\/1.c}!size@{size}}
+\index{size@{size}!PS-\/1.c@{PS-\/1.c}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int size = 0}
+
+
+
+Definition at line 72 of file P\+S-\/1.\+c.
+
+
+
+Referenced by search\+\_\+queue().
+

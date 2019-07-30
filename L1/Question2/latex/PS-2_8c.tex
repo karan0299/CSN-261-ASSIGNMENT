@@ -1,0 +1,97 @@
+\hypertarget{PS-2_8c}{}\doxysection{P\+S-\/2.c File Reference}
+\label{PS-2_8c}\index{PS-\/2.c@{PS-\/2.c}}
+
+
+brief explanation of \mbox{\hyperlink{PS-2_8c}{P\+S-\/2.\+c}} from xn  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdeque}{deque}}
+\begin{DoxyCompactList}\small\item\em struct deque with given data fields \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{PS-2_8c_a69c50f916f04c544e6dc5175e1dbc07b}\label{PS-2_8c_a69c50f916f04c544e6dc5175e1dbc07b}} 
+typedef struct \mbox{\hyperlink{structdeque}{deque}} \mbox{\hyperlink{PS-2_8c_a69c50f916f04c544e6dc5175e1dbc07b}{deque}}
+\begin{DoxyCompactList}\small\item\em struct deque with given data fields \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{PS-2_8c_ab9d6aab03cb660f16977513e240b39d7}\label{PS-2_8c_ab9d6aab03cb660f16977513e240b39d7}} 
+void \mbox{\hyperlink{PS-2_8c_ab9d6aab03cb660f16977513e240b39d7}{new\+Deque}} (\mbox{\hyperlink{structdeque}{deque}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em initialize the deque \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{PS-2_8c_a078d20c9837014e77d80f2b7be470b77}\label{PS-2_8c_a078d20c9837014e77d80f2b7be470b77}} 
+void \mbox{\hyperlink{PS-2_8c_a078d20c9837014e77d80f2b7be470b77}{insert\+Front}} (\mbox{\hyperlink{structdeque}{deque}} $\ast$p, int n)
+\begin{DoxyCompactList}\small\item\em insert at front of deque \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{PS-2_8c_a3d37c0b2851c9ff831e02b48f3e9c4ff}\label{PS-2_8c_a3d37c0b2851c9ff831e02b48f3e9c4ff}} 
+void \mbox{\hyperlink{PS-2_8c_a3d37c0b2851c9ff831e02b48f3e9c4ff}{insert\+Back}} (\mbox{\hyperlink{structdeque}{deque}} $\ast$p, int n)
+\begin{DoxyCompactList}\small\item\em insert at last last of deque \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{PS-2_8c_ade1e6228863ef67ae110cb60f9ee2829}\label{PS-2_8c_ade1e6228863ef67ae110cb60f9ee2829}} 
+void \mbox{\hyperlink{PS-2_8c_ade1e6228863ef67ae110cb60f9ee2829}{delete\+Front}} (\mbox{\hyperlink{structdeque}{deque}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em delete from front of deque \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{PS-2_8c_a4ed43c9d4332f89d4fafec6a61d1be60}\label{PS-2_8c_a4ed43c9d4332f89d4fafec6a61d1be60}} 
+void \mbox{\hyperlink{PS-2_8c_a4ed43c9d4332f89d4fafec6a61d1be60}{delete\+Back}} (\mbox{\hyperlink{structdeque}{deque}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em delete from last of deque \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{PS-2_8c_adddced7a8c51c51ca8698992b070010d}\label{PS-2_8c_adddced7a8c51c51ca8698992b070010d}} 
+int \mbox{\hyperlink{PS-2_8c_adddced7a8c51c51ca8698992b070010d}{get}} (\mbox{\hyperlink{structdeque}{deque}} $\ast$p, int i)
+\begin{DoxyCompactList}\small\item\em get the element at position i of the deque \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{PS-2_8c_a5e2f549c6d3aabc1d8154f6536476b10}\label{PS-2_8c_a5e2f549c6d3aabc1d8154f6536476b10}} 
+int \mbox{\hyperlink{PS-2_8c_a5e2f549c6d3aabc1d8154f6536476b10}{search}} (\mbox{\hyperlink{structdeque}{deque}} $\ast$p, int n)
+\begin{DoxyCompactList}\small\item\em search for number if exists or not in deque \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{PS-2_8c_ab1e03db734bdd3bc0fe13df64491541a}\label{PS-2_8c_ab1e03db734bdd3bc0fe13df64491541a}} 
+void \mbox{\hyperlink{PS-2_8c_ab1e03db734bdd3bc0fe13df64491541a}{print\+List}} (\mbox{\hyperlink{structdeque}{deque}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em print the deque \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{PS-2_8c_ab42689ca715deac7054cd22099e90b34}\label{PS-2_8c_ab42689ca715deac7054cd22099e90b34}} 
+void \mbox{\hyperlink{PS-2_8c_ab42689ca715deac7054cd22099e90b34}{empty}} (\mbox{\hyperlink{structdeque}{deque}} $\ast$p)
+\begin{DoxyCompactList}\small\item\em empty the deque , deleting all elements \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{PS-2_8c_acdef7a1fd863a6d3770c1268cb06add3}{main}} ()
+\begin{DoxyCompactList}\small\item\em this main func @ return nothing \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+brief explanation of \mbox{\hyperlink{PS-2_8c}{P\+S-\/2.\+c}} from xn 
+
+\begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{PS-2_8c_acdef7a1fd863a6d3770c1268cb06add3}\label{PS-2_8c_acdef7a1fd863a6d3770c1268cb06add3}} 
+\index{PS-\/2.c@{PS-\/2.c}!main@{main}}
+\index{main@{main}!PS-\/2.c@{PS-\/2.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily void main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this main func @ return nothing 
+
+declare the deque
+
+to mark start and end of cpu clock
+
+store the time taken by cpu to perform operation
+
+choice for operation in switch menu
+
+insert at front of deque
+
+insert at last last of deque
+
+delete from front of deque
+
+delete from last of deque
+
+get the element at position i of the deque
+
+search for number if exists or not in deque
+
+print the deque
+
+empty the deque , deleting all elements

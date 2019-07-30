@@ -1,0 +1,25 @@
+var PS_1_8c =
+[
+    [ "queue", "structqueue.html", "structqueue" ],
+    [ "node", "structnode.html", "structnode" ],
+    [ "MAX", "PS-1_8c.html#a392fb874e547e582e9c66a08a1f23326", null ],
+    [ "queue", "PS-1_8c.html#ae3925075f052290340ee4c1eb2a484e6", null ],
+    [ "node", "PS-1_8c.html#ace29f146c273d2654669dc2c710603e2", null ],
+    [ "insert", "PS-1_8c.html#a235c4856e18be8f9d0338a4a3f8bab7c", null ],
+    [ "newNode", "PS-1_8c.html#a6578e01c6355b6a2425cd0c6c5c6db45", null ],
+    [ "delete", "PS-1_8c.html#a3bcfd34802ff7b2faca2cf7405801678", null ],
+    [ "search", "PS-1_8c.html#aaad50dfc23d8e85c6373349849b85ae6", null ],
+    [ "modify", "PS-1_8c.html#a200187ffd1c25041d20c0acb7b02a014", null ],
+    [ "printList", "PS-1_8c.html#a2f736094bbaa598f70c3e241bad4a1cc", null ],
+    [ "sortByName", "PS-1_8c.html#a16af310ad608852c74a4b3c1f5c694c9", null ],
+    [ "sortByRollNumber", "PS-1_8c.html#a4a4a143e1a7fa6bf90c3a799f74f9703", null ],
+    [ "swap_int", "PS-1_8c.html#a4c72369c9202f982163ec9fed42d1b03", null ],
+    [ "init_queue", "PS-1_8c.html#a4842f135706c1989512d37dd2d1aac97", null ],
+    [ "push", "PS-1_8c.html#a8ccd6305bf0fb0b5a7b8c4f9a306607d", null ],
+    [ "pop", "PS-1_8c.html#a929eaf0d729b866014d273eb894bf2b1", null ],
+    [ "search_queue", "PS-1_8c.html#a0153a7aacbce534b5082e57af31a4e48", null ],
+    [ "main", "PS-1_8c.html#acdef7a1fd863a6d3770c1268cb06add3", null ],
+    [ "first", "PS-1_8c.html#a02b4428208fd0060bb54d5bb726702d4", null ],
+    [ "last", "PS-1_8c.html#a568941dcbf5e090b13c8402de0b3da61", null ],
+    [ "size", "PS-1_8c.html#a439227feff9d7f55384e8780cfc2eb82", null ]
+];
