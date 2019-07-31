@@ -155,7 +155,6 @@ void main() {
             token = strtok(NULL, ",[^\n");
             phone[i]=(char*)malloc(strlen(token)*sizeof(char));
             strcpy(phone[i],token);
-            printf("%s\n",phone[i]);
             i++;
         }
     clock_t start, end; //! to mark start and end of cpu clock
@@ -165,7 +164,7 @@ void main() {
         printf("\n\n1.Insert\n2.Delete\n3.Search\n4.modify\n5.sort\n6.PrintList\n\nEnter ur choice");
         printf("\nenter -1 to exit\n");
         scanf("%d",&op);
-        while ((getchar()) != '\n'); 
+        // while ((getchar()) != '\n'); 
         switch(op){
             case 1: // ! insert the student's data into the list
                     printf("operation insert\n");
@@ -182,13 +181,13 @@ void main() {
                     printf("operation completed\n"); 
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-                    printf("cpu time used %f", cpu_time);  
+                    printf("cpu time used %f\n", cpu_time);  
                     break; 
 
             case 2: //! delete the data from the list
                     printf("operation delete\n");
                     printf("enter roll to delete\n") ;
-                    int rolln;
+                    int rolln = 108;
                     scanf("%d",&rolln);
                     while ((getchar()) != '\n'); 
                     start = clock ();
@@ -196,7 +195,7 @@ void main() {
                     printf("operation completed\n"); 
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-                    printf("cpu time used %f", cpu_time);  
+                    printf("cpu time used %f\n", cpu_time);  
                     break;
 
             case 3: //! search for student with given roll number
@@ -207,46 +206,46 @@ void main() {
                     while ((getchar()) != '\n'); 
                     start = clock ();
                     search(rollnumber);
-                    printf("operation completed"); 
+                    printf("operation completed\n"); 
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-                    printf("cpu time used %f", cpu_time);                  
+                    printf("cpu time used %f\n", cpu_time);                  
                     break;
 
             case 4: //! modify the current values of data inside the node
-                    printf("operation modify");
+                    printf("operation modify\n");
                     int num_in;
                     scanf("%d",&num_in);
                     while ((getchar()) != '\n'); 
                     start = clock ();
                     modify(num_in);
-                    printf("operation completed");
+                    printf("operation completed\n");
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-                    printf("cpu time used %f", cpu_time); 
+                    printf("cpu time used %f\n", cpu_time); 
                     break;
 
             case 5: //! sort the list in dictionary order
-                    printf("operation sort by name");
+                    printf("operation sort by name\n");
                     start = clock ();
                     sortByName();
-                    printf("operation completed");
+                    printf("operation completed\n");
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-                    printf("cpu time used %f", cpu_time);
+                    printf("cpu time used %f\n", cpu_time);
                     break;    
 
             case 6: //! print the list
-                    printf("operation print");
+                    printf("operation print\n");
                     start = clock ();
                     printList();
-                    printf("operation completed");   
+                    printf("operation completed\n");   
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-                    printf("cpu time used %f", cpu_time); 
+                    printf("cpu time used %f\n", cpu_time); 
                     break;   
                                   
-            default: printf("wrong choice");            
+            default: printf("wrong choice\n");            
         } 
         if(op==-1)
         break;
@@ -269,9 +268,10 @@ void insert( int roll,char* name,char* dob,char* addr,char* phno){
     node *nNode = newNode(roll, name,dob,addr,phno);
     if (first == last && first == NULL)
     {
-       first = last = nNode;
-       first->next = last->next = NULL;
-       first->prev = last->prev = NULL;    
+       first = nNode;
+       last = nNode;
+       first->next = last;
+       last->prev = first;   
        while ((getchar()) != '\n');   
     }
     else
@@ -287,55 +287,59 @@ void insert( int roll,char* name,char* dob,char* addr,char* phno){
 }
 
 void delete(int roll,queue *q){
-   node *current;
-   node *prev;
-   prev = first;
-   current= first->next;
-   bool b=false;
-   do {
-       if(current->roll == roll)
-       {
-           b=true;
-           break;
-       }
-       current=current->next;
-       prev=prev->next;
-    } while(current!=first->next);
-    if(b&&current!=first){
-       prev->next=current->next;
-       current->next->prev=prev;
-       current->next=NULL;
-       current->prev=NULL;
-       push(q,roll);
-   }
-   else if(current==first){
-       first=first->next;
-       last->next=first;
-       first->prev=last;
-   }
-   else printf("Roll is still unused\n");
+    if(q->size==13){
+        printf("Linked list is empty ,so nothing to delete\n");
+    }
+    else {
+    node *current;
+    node *previous;
+    previous = first;
+    current= first->next;
+    bool b=false;
+    do {
+        if(current->roll == roll)
+        {
+            b=true;
+            break;
+        }
+        current=current->next;
+        previous=previous->next;
+        } while(current!=first->next);
+        if(b&&current!=first){
+        previous->next=current->next;
+        current->next->prev=previous;
+        current->next=NULL;
+        current->prev=NULL;
+        push(q,roll);
+    }
+    else if(current==first&&current->roll == roll){
+        first=first->next;
+        last->next=first;
+        first->prev=last;
+    }
+    else printf("Roll is still unused\n");
+    }
 }
 
 void search(int n){
-  node *current;
-  current = first;
-  bool b=false;
-   do {
-       int p = current->roll;
-       if(p==n){
-           b= true;
-           break;
-       }
-       current=current->next;
-   }while(current!=first);
-   if(b){
-       printf("salad");
-        printf("name:%s\n",current->name);
-        printf("address:%s\n",current->addr);
-        printf("dob:%s\n",current->dob);
-        printf("phone no:%s\n", current->phno);
-   }
-   else printf("student with roll number does not exist");
+    node *current;
+    current = first;
+    bool b=false;
+    do {
+        int p = current->roll;
+        if(p==n){
+            b= true;
+            break;
+        }
+        current=current->next;
+    }while(current!=first);
+    if(b){
+            printf("name:%s\n",current->name);
+            printf("address:%s\n",current->addr);
+            printf("dob:%s\n",current->dob);
+            printf("phone no:%s\n", current->phno);
+    }
+   else printf("student with roll number does not exist\n");
 }
 
 void modify(int roll){
@@ -364,7 +368,7 @@ void modify(int roll){
         scanf("%s",current->dob);
         while ((getchar()) != '\n'); 
     }
-    else printf("roll number is still unused");
+    else printf("roll number is still unused\n");
 }
 
 void sortByName(){

@@ -74,7 +74,7 @@ void main() {
                     removeRed(red,blue,green);
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-                    printf("cpu time used %f", cpu_time);
+                    printf("cpu time used %f\n", cpu_time);
                     break;
 
             case 2: //! remove red shade from the image
@@ -82,7 +82,7 @@ void main() {
                     removeGreen(red,blue,green);
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-                    printf("cpu time used %f", cpu_time);
+                    printf("cpu time used %f\n", cpu_time);
                     break;
 
             case 3: //! remove Blue shade from the image    
@@ -90,7 +90,7 @@ void main() {
                     removeBlue(red,blue,green);
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-                    printf("cpu time used %f", cpu_time);
+                    printf("cpu time used %f\n", cpu_time);
                     break; 
                     
             case 4: //! preserve only Red shade in the image
@@ -114,11 +114,11 @@ void main() {
                     preserveGreen(red,blue,green);
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-                    printf("cpu time used %f", cpu_time);
+                    printf("cpu time used %f\n", cpu_time);
                     break;
 
             case 7: //! print current value of RGB in pixel at given point 
-                    printf("Enter the coordinates ,  0<=x<953 , 0<=y<1268");
+                    printf("Enter the coordinates ,  0<=x<953 , 0<=y<1268\n");
                     int x,y;
                     scanf("%d",&x);
                     scanf("%d",&y);
@@ -126,10 +126,10 @@ void main() {
                     pixelValue(x,y,red,blue,green);
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-                    printf("cpu time used %f", cpu_time);
+                    printf("cpu time used %f\n", cpu_time);
                     break;
 
-            default: printf("invalid operation");                       
+            default: printf("invalid operation\n");                       
         }
         if(op==-1)
             break;
@@ -179,7 +179,7 @@ void preserveGreen(int **red,int **blue,int **green){
 
 void pixelValue(int x, int y, int **red,int **blue,int **green){
     printf("pixel value at give point is\n");
-    printf("RGB(%d,%d,%d)",red[x][y],green[x][y],blue[x][y]);
+    printf("RGB(%d,%d,%d)\n",red[x][y],green[x][y],blue[x][y]);
 }
 
 void inputFile(int** arr, char* ch){

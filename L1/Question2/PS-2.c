@@ -63,7 +63,7 @@ void main() {
   //! choice for operation in switch menu
   int f;    
   while(1){  
-    printf("\n1.InsertFront\n2.InsertBack\n3.DeleteRear\n4.DeleteFront\n5.Get Element\n6.Search element\n7.Print deque\n8.Empty deque\n\nEnter ur choice");
+    printf("\n\n1.InsertFront\n2.InsertBack\n3.DeleteRear\n4.DeleteFront\n5.Get Element\n6.Search element\n7.Print deque\n8.Empty deque\n\nEnter ur choice");
     printf("\nenter -1 to exit\n");
     scanf("%d",&f);
     switch(f) {
@@ -77,7 +77,7 @@ void main() {
               printf("operation completed\n");
               end = clock();
               cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-              printf("cpu time used %f", cpu_time);
+              printf("cpu time used %f\n", cpu_time);
               break;
 
       case 2: //! insert at last last of deque
@@ -90,7 +90,7 @@ void main() {
               printf("operation completed\n");
               end = clock();
               cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-              printf("cpu time used %f", cpu_time);
+              printf("cpu time used %f\n", cpu_time);
               break;
 
       case 3: //! delete from front of deque 
@@ -100,7 +100,7 @@ void main() {
               printf("operation completed\n");
               end = clock();
               cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-              printf("cpu time used %f", cpu_time);
+              printf("cpu time used %f\n", cpu_time);
               break;
 
       case 4: //! delete from last of deque
@@ -110,7 +110,7 @@ void main() {
               printf("operation completed\n");
               end = clock();
               cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-              printf("cpu time used %f", cpu_time);
+              printf("cpu time used %f\n", cpu_time);
               break;
 
       case 5: //! get the element at position i of the deque
@@ -127,7 +127,7 @@ void main() {
               printf("operation completed\n");
               end = clock();
               cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-              printf("cpu time used %f", cpu_time);
+              printf("cpu time used %f\n", cpu_time);
               break;
 
       case 6: //! search for number if exists or not in deque
@@ -135,7 +135,7 @@ void main() {
               int number;
               scanf("%d",&number);
               start = clock ();
-              int answer=search(&que,n);
+              int answer=search(&que,number);
               if(answer==-1)
                 printf("element does not exist in deque\n");
               else
@@ -143,7 +143,7 @@ void main() {
               printf("operation completed\n");
               end = clock();
               cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-              printf("cpu time used %f", cpu_time);
+              printf("cpu time used %f\n", cpu_time);
               break;
 
       case 7: //! print the deque
@@ -151,7 +151,7 @@ void main() {
               printList(&que);
               end = clock();
               cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-              printf("cpu time used %f", cpu_time);
+              printf("cpu time used %f\n", cpu_time);
               break;
 
       case 8: //! empty the deque , deleting all elements
@@ -159,7 +159,7 @@ void main() {
               empty(&que);
               end = clock();
               cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
-              printf("cpu time used %f", cpu_time);
+              printf("cpu time used %f\n", cpu_time);
               break;
               
       default: printf("operation does not exist\n");
@@ -201,8 +201,6 @@ void insertFront(deque *p, int n) {
 }
 
 void insertBack(deque *p, int n){
-    // printf("%d",p->rear);
-    // printf("%d",n);
   if(p->rear==-1&&p->front==-1){
     p->ptr=(int*)(malloc(1*sizeof(int)));
     int *k=p->ptr;
@@ -227,7 +225,7 @@ void insertBack(deque *p, int n){
 void deleteFront(deque *p)
 {
   if(p->rear==-1&&p->front==-1)
-    printf("operation not valid");
+    printf("operation not valid\\n");
   else if(p->size==1){
     p->rear=-1;
     p->front=-1;
@@ -248,7 +246,7 @@ void deleteFront(deque *p)
 
 void deleteBack(deque *p){
   if(p->rear==-1&&p->front==-1)
-    printf("operation not valid");
+    printf("operation not valid\n");
   else if(p->size==1){
     p->rear=-1;
     p->front=-1;
@@ -275,15 +273,17 @@ int get(deque  *p, int i){
 int search(deque *p, int n){
   int index=-1;
   for(int i=0;i<=p->rear;i++){
-    if(p->ptr[i]==n)
+    if(p->ptr[i]==n){
         index=i;
+        break;
+    }
   }
   return index;
 }
 
 void printList(deque *p){
-    printf("List is given as");
-    printf("%d entries are made",p->rear+1 );
+    printf("List is given as \n");
+    printf("%d entries are made \n",p->rear+1 );
     for(int i=0;i<p->size;i++)
       printf("%d\n",p->ptr[i]);
 }
