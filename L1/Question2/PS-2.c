@@ -46,6 +46,11 @@ void printList(deque *p);
 //! empty the deque , deleting all elements
 void empty(deque *p);
 
+//! to print length of deque
+void length(deque *p);
+
+//! to print capacity of deque
+void capacity(deque *p);
 
 /**
  @brief this main func
@@ -63,7 +68,7 @@ void main() {
   //! choice for operation in switch menu
   int f;    
   while(1){  
-    printf("\n\n1.InsertFront\n2.InsertBack\n3.DeleteRear\n4.DeleteFront\n5.Get Element\n6.Search element\n7.Print deque\n8.Empty deque\n\nEnter ur choice");
+    printf("\n\n1.InsertFront\n2.InsertBack\n3.DeleteRear\n4.DeleteFront\n5.Get Element\n6.Search element\n7.Print deque\n8.Empty deque \n9. Get capacity\n10. Get Length\n\nEnter ur choice");
     printf("\nenter -1 to exit\n");
     scanf("%d",&f);
     switch(f) {
@@ -161,7 +166,23 @@ void main() {
               cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
               printf("cpu time used %f\n", cpu_time);
               break;
-              
+
+      case  9://! to print capacity of deque
+              start = clock ();
+              capacity(&que);
+              end = clock();
+              cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+              printf("cpu time used %f\n", cpu_time);
+              break;
+
+      case 10://! to print length of deque
+              start = clock ();
+              length(&que);
+              end = clock();
+              cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
+              printf("cpu time used %f\n", cpu_time);
+              break;
+
       default: printf("operation does not exist\n");
     }
     if(f==-1) break;
@@ -292,4 +313,12 @@ void empty(deque *p){
   free(p->ptr);
   p->rear=-1;
   p->front=-1;
+}
+
+void capacity(deque *p){
+  printf("capacity is %d\n",p->size);
+}
+
+void length(deque *p){
+  printf("capacity is %d\n",p->rear+1);
 }

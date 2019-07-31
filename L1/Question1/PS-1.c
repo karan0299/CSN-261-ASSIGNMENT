@@ -18,6 +18,7 @@ typedef struct queue {
    int size;
 } queue;
 
+int global = 101;
 //! node to encapsulate individual student's data
 typedef struct node {
     int roll;
@@ -125,8 +126,6 @@ bool search_queue(queue *q, int n){
 void main() {
     queue unusedRoll; //! declare the queue
     init_queue(&unusedRoll);
-    for(int i=0;i<13;i++)
-        push(&unusedRoll,101+i);
     node students; //! declare doubly linked list
     int op; //! choice for operation in switch menu
     
@@ -177,7 +176,7 @@ void main() {
                     if((rollnum=pop(&unusedRoll))!=-1)
                        insert(rollnum,name_data[num-1],dtob[num-1],address[num-1],phone[num-1]);
                     else 
-                       printf("linked list in full\n");
+                       insert(global++,name_data[num-1],dtob[num-1],address[num-1],phone[num-1]);
                     printf("operation completed\n"); 
                     end = clock();
                     cpu_time = ((double) (end - start)) / CLOCKS_PER_SEC;
@@ -316,6 +315,7 @@ void delete(int roll,queue *q){
         first=first->next;
         last->next=first;
         first->prev=last;
+        push(q,roll);
     }
     else printf("Roll is still unused\n");
     }
