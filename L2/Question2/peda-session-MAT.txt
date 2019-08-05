@@ -1,0 +1,10 @@
+break /home/karan/Desktop/csn-261/L2/Question2/MAT.c:145
+break /home/karan/Desktop/csn-261/L2/Question2/MAT.c:149
+break /home/karan/Desktop/csn-261/L2/Question2/MAT.c:169
+break /home/karan/Desktop/csn-261/L2/Question2/MAT.c:191
+break /home/karan/Desktop/csn-261/L2/Question2/MAT.c:195
+break /home/karan/Desktop/csn-261/L2/Question2/MAT.c:213
+break /home/karan/Desktop/csn-261/L2/Question2/MAT.c:219
+break /home/karan/Desktop/csn-261/L2/Question2/MAT.c:252
+break /home/karan/Desktop/csn-261/L2/Question2/MAT.c:271
+

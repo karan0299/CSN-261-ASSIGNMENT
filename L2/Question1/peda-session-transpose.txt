@@ -1,0 +1,7 @@
+break /home/karan/Desktop/csn-261/L2/Question1/transpose.c:64
+break /home/karan/Desktop/csn-261/L2/Question1/transpose.c:88
+break /home/karan/Desktop/csn-261/L2/Question1/transpose.c:106
+break /home/karan/Desktop/csn-261/L2/Question1/transpose.c:121
+break /home/karan/Desktop/csn-261/L2/Question1/transpose.c:139
+break /home/karan/Desktop/csn-261/L2/Question1/transpose.c:142
+

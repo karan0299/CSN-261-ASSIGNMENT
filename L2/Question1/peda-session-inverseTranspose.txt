@@ -1,0 +1,7 @@
+break /home/karan/Desktop/csn-261/L2/Question1/inverseTranspose.c:70
+break /home/karan/Desktop/csn-261/L2/Question1/inverseTranspose.c:87
+break /home/karan/Desktop/csn-261/L2/Question1/inverseTranspose.c:90
+break /home/karan/Desktop/csn-261/L2/Question1/inverseTranspose.c:102
+break /home/karan/Desktop/csn-261/L2/Question1/inverseTranspose.c:121
+break /home/karan/Desktop/csn-261/L2/Question1/inverseTranspose.c:99
+
