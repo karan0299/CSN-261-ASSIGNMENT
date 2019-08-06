@@ -21,6 +21,7 @@
 *@param fp2 Pointer to decryptedoutputFile
 *@date 04/08/19
 */
+
 void compareFiles(FILE *fp1, FILE *fp2) 
 { 
 
