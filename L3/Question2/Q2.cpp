@@ -1,7 +1,9 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 void insert(struct nodeList * list , int new_data);
+
+map <int , vector<int> > tree;
 
 struct node {
     int data;
@@ -67,12 +69,10 @@ void insert(struct nodeList * list , int new_data) {
 void fillDp(struct nodeList * dplist,struct nodeList * inplist){
     struct node* currentInp = inplist->head;
     insert(dplist,currentInp->data);
-    cout<<"dp"<<" "<<currentInp->data<<endl;
     int last_element = currentInp->data;
     currentInp=currentInp->right;
     while(currentInp!=NULL){
         int dpelement = last_element^currentInp->data;
-        cout<<"dp"<<" "<<dpelement<<endl;
         insert(dplist,dpelement);
         currentInp=currentInp->right;
         last_element = dpelement;
@@ -109,7 +109,7 @@ int get(struct nodeList * list , int m, int n){
     return k;
 }
 
-void set(struct nodeList * list , int m, int n,int dt){
+void setElement(struct nodeList * list , int m, int n,int dt){
     struct node* current2 = list->head;
     while(n>0){
         current2 = current2->right;
@@ -127,60 +127,43 @@ void set(struct nodeList * list , int m, int n,int dt){
 void countAnswer(struct nodeList * calc , struct nodeList * dp,int n){
     for(int i = 1;i<=n;i++){
         int m = get(dp,0,i-1);
-        cout<<i<<"  "<<" m "<<m<<endl;
         if(get(calc,1,m)==0){
             if(m==0){
                 ans=ans+(i-1);
-                if(ans){
-                    for(int j=2;j<=i;j++)
-                    cout<<1<<j<<i<<endl;
-                }
-                set(calc,1,m,1);
-                set(calc,2,m,i);
-                set(calc,3,m,i-1);
+                tree[m].push_back(i);
+                setElement(calc,1,m,1);
+                setElement(calc,2,m,i);
+                setElement(calc,3,m,i-1);
             }
             else {
                 int temp = get(calc,1,m);
-                cout<<"temp = "<<temp<<endl;
-                set(calc,1,m,temp+1);
-                set(calc,2,m,i);
-                cout<<" i hum = "<<i<<endl;
+                tree[m].push_back(i);
+                setElement(calc,1,m,temp+1);
+                setElement(calc,2,m,i);
             }
         }
         else {
             if(m==0){
+                tree[m].push_back(i);
                 int tmp = get(calc,1,m);
-                set(calc,1,m,tmp+1);
+                setElement(calc,1,m,tmp+1);
                 int tmp1 = get(calc,3,m);
                 int tmp2 = get(calc,2,m);
                 int tmp3 = tmp1+ ((i-tmp2)*(tmp+1)) -1;
-                set(calc,3,m,tmp3);
+                setElement(calc,3,m,tmp3);
                 ans = ans +tmp3;
-                set(calc,2,m,i);
-                cout<<" i hu = "<<i<<endl;
-                if(ans){
-                    for(int j=2;j<=i;j++)
-                    cout<<1<<j<<i<<endl;
-                }
+                setElement(calc,2,m,i);
             }
             else{
+                tree[m].push_back(i);
                 int tmp = get(calc,1,m);
-                 cout<<"tmp = "<<tmp<<endl;
                 int tmp1 = get(calc,3,m);
-                cout<<"tmp1 = "<<tmp1<<endl;
                 int tmp2 = get(calc,2,m);
-                cout<<"tmp2 = "<<tmp2<<endl;
                 int tmp3 = tmp1+ ((i-tmp2)*tmp) -1;
-                set(calc,3,m,tmp3);
-                set(calc,1,m,tmp+1);
+                setElement(calc,3,m,tmp3);
+                setElement(calc,1,m,tmp+1);
                 ans = ans +tmp3;
-                cout<<"ans = "<<ans<<endl;
-                set(calc,2,m,i);
-                cout<<" i = "<<i<<endl;
-                 if(ans){
-                    for(int j=tmp2+2;j<=i;j++)
-                    cout<<tmp2+1<<j<<i<<endl;
-                }
+                setElement(calc,2,m,i);
             }
         }
     }
@@ -210,13 +193,42 @@ int main(){
     struct nodeList* dp = initialize();
 
     fillDp(dp,input);
-    cout<<"fillDp"<<endl;
     int max = findMax(dp);
-    cout<<"max = "<<max<<endl;
     struct nodeList* calc = initialize2d(max);
 
     countAnswer(calc,dp,n);
 
     printAnswer();
+    
+    for(auto elem : tree)
+    {
+        vector <int> v;
+        v = elem.second;
+        int n =elem.first;
+
+        if(n==0){
+            v.insert(v.begin(),0);
+            for(int i=1;i<v.size();i++ ){
+                int k=1;
+                for(int j = v[0];j<=v[i];j=j+v[k++]){
+                    for(int m=j+2;m<=v[i];m++){
+                        cout<<j+1<<" "<<m<<" "<<v[i]<<endl;
+                    }
+                }
+            }
+        }
+        else if(v.size() > 1){
+            
+            for(int i=1;i<v.size();i++ ){
+                int k=1;
+                for(int j = v[0];j<=v[i];j=j+v[k++]-1){
+                    for(int m=j+2;m<=v[i];m++){
+                        cout<<j+1<<" "<<m<<" "<<v[i]<<endl;
+                    }
+                }
+            }
+        }
+
+    }
     return 0;
 }
