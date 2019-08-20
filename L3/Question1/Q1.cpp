@@ -3,7 +3,9 @@
 #include <bits/stdc++.h> 
 using namespace std;
 
-enum Color {RED, BLACK}; 
+enum Color {RED, BLACK};
+int arr[1000];
+int size = 0;
   
 struct node
 { 
@@ -12,14 +14,14 @@ struct node
     node *left, *right, *parent; 
 }; 
 
+
+node *insertInAvl(node * root,int key); 
+int getBalance(node *N); 
 static node * initializeNode(int item);
 static node * initializeNodeRB(int item);
 static node *leftRotation(struct node *x);
 static node *rightRotation(struct node *y);
 static int getHeight ( struct node * root );
-static void storeBSTNodes(struct node* root, vector<struct node *> &nodes);
-static node* convertToAVLUtil(vector<struct node*> &nodes, int start, int end);
-static node*  convertToAVL(struct node* root);
 
 void printTreeHelper( struct node * root,int level);
 void inorderHelper(struct node *root) ;
@@ -33,6 +35,7 @@ public:
     BST () { root = NULL; }
     bool insert(int item) { return insert(item,root); };
     void inorderTraversal() const { inorderTraversal(root);};
+    void inorderTravel() const { inorderTravel(root);};
     int height() { return height(root); }
     void printTree() { printTree(root,0); }
     void printPaths();
@@ -40,6 +43,7 @@ public:
      
 protected:
     void inorderTraversal(const struct node* curr) const;
+    void inorderTravel(const struct node* curr) const;
     bool insert(int item,struct node* curr);
     int height(struct node* curr);
     void printTree(struct node* curr, int level);
@@ -98,23 +102,30 @@ int main() {
                         cin>>num;
                         bst.insert(num);
                         rbt.insert(num);
+                        size++;
                         cout<<num<<" inserted in both reb black and BST "<<endl;
                         break;
 
             case 2 :    
-                        avl.root = copy(bst.root);
-                        avl.root = convertToAVL(avl.root);
+                        bst.inorderTravel();
+                        avl.root = NULL;
+                        // avl.root = copy(bst.root);
+                        // avl.root = convertToAVL(avl.root);
+                        for(int i =0 ;i<size;i++){
+                           avl.root = insertInAvl(avl.root,arr[i]);
+                        }
+
                         cout<<"Binary Search Tree converted to AVL"<<endl;
                         break;
 
             case 3 :    
                         cout<<"Inorder Traversal for Binary search Tree "<<endl;
-                        bst.printPaths();
+                        bst.inorderTraversal();
                         cout<<"\nInorder Traversal for AVL Tree\n";
                         if(avl.root == NULL)
                             cout<<"AVL tree is empty \n";
                         else 
-                            avl.printPaths();
+                            avl.inorderTraversal();
                         cout<<"\nInorder Traversal for Red Black Tree\n";
                         rbt.inorder();
                         cout<<"\n";
@@ -127,9 +138,9 @@ int main() {
                         if(avl.root == NULL)
                             cout<<"AVL tree is empty \n";
                         else 
-                            avl.inorderTraversal();
+                            avl.printPaths();
                         cout<<"\nPaths for Red Black Tree\n";
-                        rbt.inorder();
+                        rbt.printPaths();
                         cout<<"\n";
                         break;
 
@@ -221,8 +232,18 @@ bool BST :: insert(int item, struct node * currentNode) {
 void BST :: inorderTraversal(const struct node * root) const {
     if (root != NULL) {
         inorderTraversal(root -> left);
+  
         cout<<root -> data<<endl;
         inorderTraversal(root -> right);
+    }
+}
+
+void BST :: inorderTravel(const struct node * root) const {
+    static int l=0;
+    if (root != NULL) {
+        inorderTravel(root -> left);
+        arr[l++] = root->data;
+        inorderTravel(root -> right);
     }
 }
 
@@ -238,7 +259,7 @@ void BST :: printTree( struct node * root,int level) {
         cout<<"\t";
         }
         if(root->left||root->right)
-        cout<<root -> data<<"["<<abs(getHeight(root->left)-getHeight(root->right))<<endl;
+        cout<<root -> data<<"["<<abs(getHeight(root->left)-getHeight(root->right))<<"]"<<endl;
         else
         cout<<root -> data<<endl;
         printTreeHelper(root -> left,level+1);   
@@ -246,45 +267,6 @@ void BST :: printTree( struct node * root,int level) {
     }
 }
 
-static void storeBSTNodes(struct node* root, vector<struct node *> &nodes) { 
-	// Base case 
-	if (root==NULL) 
-		return; 
-
-	// Store nodes in Inorder (which is sorted 
-	// order for BST) 
-	storeBSTNodes(root->left, nodes); 
-	nodes.push_back(root); 
-	storeBSTNodes(root->right, nodes); 
-} 
-
-static node* convertToAVLUtil(vector<struct node*> &nodes, int start, int end) { 
-	// base case 
-	if (start > end) 
-		return NULL; 
-
-	/* Get the middle element and make it root */
-	int mid = ceil((start + end)/2.0); 
-	struct node *root = nodes[mid]; 
-
-	/* Using index in Inorder traversal, construct 
-	left and right subtress */
-	root->left = convertToAVLUtil(nodes, start, mid-1); 
-	root->right = convertToAVLUtil(nodes, mid+1, end); 
-
-	return root; 
-} 
-
-
-static node*  convertToAVL(struct node* root){ 
-	// Store nodes of given BST in sorted order 
-	vector<struct node *> nodes; 
-	storeBSTNodes(root, nodes); 
-
-	// Constucts BST from nodes[] 
-	int n = nodes.size(); 
-	return convertToAVLUtil(nodes, 0, n-1); 
-} 
 
 void BST:: printPaths(){
     printPathsHelper(root);
@@ -599,3 +581,61 @@ void printPathsHelper (struct node * root){
 void RBTree :: printPaths(){
     printPathsHelper(root);
 }
+
+
+
+
+int getBalance(node *N)  {  
+    if (N == NULL)  
+        return 0;  
+    return getHeight(N->left) - getHeight(N->right);  
+}  
+
+
+node* insertInAvl(node* Node, int data) {  
+    /* 1. Perform the normal BST insertion */
+    if (Node == NULL)  
+        return(initializeNode(data));  
+  
+    if (data < Node->data)  
+        Node->left = insertInAvl(Node->left, data);  
+    else if (data > Node->data)  
+        Node->right = insertInAvl(Node->right, data);  
+    else // Equal keys are not allowed in BST  
+        return Node;  
+  
+    /* 2. Update height of this ancestor node */ 
+  
+    /* 3. Get the balance factor of this ancestor  
+        node to check whether this node became  
+        unbalanced */
+    int balance = getBalance(Node);  
+  
+    // If this node becomes unbalanced, then  
+    // there are 4 cases  
+  
+    // Left Left Case  
+    if (balance > 1 && data < Node->left->data)  
+        return rightRotation(Node);  
+  
+    // Right Right Case  
+    if (balance < -1 && data > Node->right->data)  
+        return leftRotation(Node);  
+  
+    // Left Right Case  
+    if (balance > 1 && data > Node->left->data)  
+    {  
+        Node->left = leftRotation(Node->left);  
+        return rightRotation(Node);  
+    }  
+  
+    // Right Left Case  
+    if (balance < -1 && data < Node->right->data)  
+    {  
+        Node->right = rightRotation(Node->right);  
+        return leftRotation(Node);  
+    }  
+  
+    /* return the (unchanged) node pointer */
+    return Node;  
+}  

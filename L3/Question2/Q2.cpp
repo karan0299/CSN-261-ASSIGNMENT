@@ -1,21 +1,125 @@
+/** 
+*@file Q2.cpp
+*@brief this  file will contain all required 
+*definitions and basic utilities functions.
+*
+*@author Karanpreet Singh
+*
+*@date 04/08/19
+*/
+
 #include<bits/stdc++.h>
+#include <string>
+#include <algorithm>
 using namespace std;
 
-void insert(struct nodeList * list , int new_data);
 
-map <int , vector<int> > tree;
 
+/// Structure to store data for the one node of linked list
 struct node {
     int data;
     struct node* right; node* down;
 };
 
+/// Structure to the store the pointer the head of the linked list
 struct nodeList {
     struct node* head;
     int size;
 };
 
+/// global variable which stores the total number of required triplets
 int ans = 0;
+
+/// vector that stores the indices where cummulative xor is same
+map <int , vector<int> > tree;
+
+nodeList* initialize();
+nodeList* initialize2d(int n);
+void insert(struct nodeList * list , int new_data); 
+void fillDp(struct nodeList * dplist,struct nodeList * inplist);
+int findMax(struct nodeList * dplist);
+int get(struct nodeList * list , int m, int n);
+void setElement(struct nodeList * list , int m, int n,int dt);
+void countAnswer(struct nodeList * calc , struct nodeList * dp,int n);
+void printAnswer();
+
+
+
+int main(){
+    struct nodeList* input = initialize();
+
+    cout<<"Enter the value of n"<<endl;
+    int n;
+    cin>>n;
+    cout<<"Enter the array values"<<endl;
+
+    int k;
+    for(int i=0;i<n;i++){
+        cin>>k;
+        insert(input,k);
+    }
+
+    
+    struct nodeList* dp = initialize();
+
+    fillDp(dp,input);
+    int max = findMax(dp);
+    struct nodeList* calc = initialize2d(max);
+
+    countAnswer(calc,dp,n);
+
+    printAnswer();
+
+    vector<string> output;
+    vector<string>::iterator it;
+
+    for(auto elem : tree)
+    {
+        vector <int> v;
+        v = elem.second;
+        int n =elem.first;
+
+        if(n==0){
+            v.insert(v.begin(),0);
+            for(int i=1;i<v.size();i++ ){
+                int k=1;
+                for(int j = v[0];j<=v[i];j=j+v[k++]){
+                    for(int m=j+2;m<=v[i];m++){
+                        string str;
+                        str = to_string(j+1);
+                        str = str+to_string(m);
+                        str = str+to_string(v[i]);
+                        output.push_back(str);
+                    }
+                }
+            }
+        }
+        else if(v.size() > 1){
+            
+            for(int i=1;i<v.size();i++ ){
+                int k=1;
+                for(int j = v[0];j<=v[i];j=j+v[k++]-1){
+                    for(int m=j+2;m<=v[i];m++){
+                        string str;
+                        str = to_string(j+1);
+                        str = str+to_string(m);
+                        str = str+to_string(v[i]);
+                        output.push_back(str);
+                    }
+                }
+            }
+        }
+
+    }
+    sort(output.begin(), output.end());
+    cout<<" i j k in lexographical order \n";
+    for (auto it=output.begin(); it!=output.end(); ++it)
+    cout << " " << *it<<endl;
+    return 0;
+}
+
+
+
 
 nodeList* initialize(){
     struct nodeList* new_nodeList = new (struct nodeList); 
@@ -172,63 +276,6 @@ void countAnswer(struct nodeList * calc , struct nodeList * dp,int n){
 
 
 void printAnswer(){
+    cout<<"Number of such triplets  = ";
     cout<<ans<<endl;
-}
-
-int main(){
-    struct nodeList* input = initialize();
-
-    cout<<"Enter the value of n"<<endl;
-    int n;
-    cin>>n;
-    cout<<"Enter the array values"<<endl;
-
-    int k;
-    for(int i=0;i<n;i++){
-        cin>>k;
-        insert(input,k);
-    }
-
-    
-    struct nodeList* dp = initialize();
-
-    fillDp(dp,input);
-    int max = findMax(dp);
-    struct nodeList* calc = initialize2d(max);
-
-    countAnswer(calc,dp,n);
-
-    printAnswer();
-    
-    for(auto elem : tree)
-    {
-        vector <int> v;
-        v = elem.second;
-        int n =elem.first;
-
-        if(n==0){
-            v.insert(v.begin(),0);
-            for(int i=1;i<v.size();i++ ){
-                int k=1;
-                for(int j = v[0];j<=v[i];j=j+v[k++]){
-                    for(int m=j+2;m<=v[i];m++){
-                        cout<<j+1<<" "<<m<<" "<<v[i]<<endl;
-                    }
-                }
-            }
-        }
-        else if(v.size() > 1){
-            
-            for(int i=1;i<v.size();i++ ){
-                int k=1;
-                for(int j = v[0];j<=v[i];j=j+v[k++]-1){
-                    for(int m=j+2;m<=v[i];m++){
-                        cout<<j+1<<" "<<m<<" "<<v[i]<<endl;
-                    }
-                }
-            }
-        }
-
-    }
-    return 0;
 }
