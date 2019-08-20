@@ -17,7 +17,9 @@ using namespace std;
 
 /// Structure to store data for the one node of linked list
 struct node {
+    /// varaible that stores the data in node
     int data;
+    /// right link and down link for the node
     struct node* right; node* down;
 };
 
@@ -120,7 +122,11 @@ int main(){
 
 
 
-
+/**
+*This method will be used inintialize the 1D node 
+*@author Karanpreet Singh
+*@date 04/08/19
+*/
 nodeList* initialize(){
     struct nodeList* new_nodeList = new (struct nodeList); 
     new_nodeList->head = NULL;
@@ -128,6 +134,12 @@ nodeList* initialize(){
     return new_nodeList;
 }
 
+/**
+*This method will be used inintialize the 2D node with the given data
+*@author Karanpreet Singh
+*@param n data to be inserted into the node
+*@date 04/08/19
+*/
 nodeList* initialize2d(int n){
     struct nodeList* new_nodeList = new (struct nodeList);
     new_nodeList->head = NULL;
@@ -152,6 +164,13 @@ nodeList* initialize2d(int n){
     return new_nodeList;
 }
 
+/**
+*This method will be used to insert the node  in the linked list
+*@author Karanpreet Singh
+*@param list pointer to the list to which data is to be inserted
+*@param new_data data to be inserted
+*@date 04/08/19
+*/
 void insert(struct nodeList * list , int new_data) { 
     struct node* new_node = new (struct node);
     new_node->data = new_data;
@@ -170,6 +189,13 @@ void insert(struct nodeList * list , int new_data) {
     //delete current;
 } 
 
+/**
+*This method will be used to create the cummulative xor linked list
+*@author Karanpreet Singh
+*@param dplist 1D linked that stores the cummulative xor
+*@param inplist 1D linked from the triplets are to be counted
+*@date 04/08/19
+*/
 void fillDp(struct nodeList * dplist,struct nodeList * inplist){
     struct node* currentInp = inplist->head;
     insert(dplist,currentInp->data);
@@ -183,6 +209,12 @@ void fillDp(struct nodeList * dplist,struct nodeList * inplist){
     }
 }
 
+/**
+*This method will be used to create individual node of a quad tree
+*@author Karanpreet Singh
+*@param dplist 1D linked that stores the cummulative xor 
+*@date 04/08/19
+*/
 int findMax(struct nodeList * dplist){
     struct node* current = dplist->head;
     int max = current->data;
@@ -194,6 +226,13 @@ int findMax(struct nodeList * dplist){
     return max;
 }
 
+/**
+*This method will be used to get the data from the particular node of the linked list
+*@author Karanpreet Singh
+*@param list 2D linked List that the previous values of indices corresponding given cummulative xor value
+*@param n correspoding to which get downward linked list node value
+*@date 04/08/19
+*/
 int get(struct nodeList * list , int m, int n){
     struct node* current1 = list->head;
     while(n>0){
@@ -213,6 +252,13 @@ int get(struct nodeList * list , int m, int n){
     return k;
 }
 
+/**
+*This method will be used set the node of 2D linked list according the given data
+*@author Karanpreet Singh
+*@param list Pointer to the 2D linked list 
+*@param  n correspoding to which downward linked list is filled
+*@date 04/08/19
+*/
 void setElement(struct nodeList * list , int m, int n,int dt){
     struct node* current2 = list->head;
     while(n>0){
@@ -228,6 +274,13 @@ void setElement(struct nodeList * list , int m, int n,int dt){
     current2->data = dt;
 }
 
+/**
+*This method will be used to actually to actually count the number of required triplets
+*@author Karanpreet Singh
+*@param calc 2D linked List that the previous values of indices corresponding given cummulative xor value
+*@param  nodeList 1D linked that stores the cummulative xor 
+*@date 04/08/19
+*/
 void countAnswer(struct nodeList * calc , struct nodeList * dp,int n){
     for(int i = 1;i<=n;i++){
         int m = get(dp,0,i-1);
@@ -273,8 +326,11 @@ void countAnswer(struct nodeList * calc , struct nodeList * dp,int n){
     }
 }
 
-
-
+/**
+*This method will be used to print the number of required triplets
+*@author Karanpreet Singh
+*@date 04/08/19
+*/
 void printAnswer(){
     cout<<"Number of such triplets  = ";
     cout<<ans<<endl;
