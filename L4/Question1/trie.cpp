@@ -1,3 +1,12 @@
+/** 
+*@file trie.cpp
+*@brief this  file will contain all required 
+*definitions and basic utilities functions.
+*
+*@author Karanpreet Singh
+*
+*@date 04/08/19
+*/
 #include <bits/stdc++.h>
 #include "QString"
 #include "trie.h"

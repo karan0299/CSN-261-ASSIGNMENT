@@ -1,0 +1,76 @@
+\hypertarget{classTrie}{}\section{Trie Class Reference}
+\label{classTrie}\index{Trie@{Trie}}
+
+
+class for \hyperlink{classTrie}{Trie} Structure  
+
+
+
+
+{\ttfamily \#include $<$trie.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTrie_a6af57e9f25d0d0a2d59eea5a4a802908}\label{classTrie_a6af57e9f25d0d0a2d59eea5a4a802908}} 
+\hyperlink{classTrie_a6af57e9f25d0d0a2d59eea5a4a802908}{Trie} ()
+\begin{DoxyCompactList}\small\item\em A class construction to initialize the root of trie. \end{DoxyCompactList}\item 
+bool \hyperlink{classTrie_a504580e3f2302333ec5f0bbfbb7d72b9}{insert} (Q\+String word, Q\+String meaning)
+\begin{DoxyCompactList}\small\item\em A public membr function to insert the node/ new data into the trie. \end{DoxyCompactList}\item 
+Q\+String \hyperlink{classTrie_a109938f88ed193f5e269d99d8d1931ca}{get\+Meaning} (Q\+String str)
+\begin{DoxyCompactList}\small\item\em A membr function to get value stored in trie. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classTrie_a90c8ea2ede015711805332c3b6882e59}\label{classTrie_a90c8ea2ede015711805332c3b6882e59}} 
+void \hyperlink{classTrie_a90c8ea2ede015711805332c3b6882e59}{load\+Data\+In\+Trie} ()
+\begin{DoxyCompactList}\small\item\em A membr function to store the data from file into the trie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class for \hyperlink{classTrie}{Trie} Structure 
+
+A more elaborate class description. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classTrie_a109938f88ed193f5e269d99d8d1931ca}\label{classTrie_a109938f88ed193f5e269d99d8d1931ca}} 
+\index{Trie@{Trie}!get\+Meaning@{get\+Meaning}}
+\index{get\+Meaning@{get\+Meaning}!Trie@{Trie}}
+\subsubsection{\texorpdfstring{get\+Meaning()}{getMeaning()}}
+{\footnotesize\ttfamily Q\+String Trie\+::get\+Meaning (\begin{DoxyParamCaption}\item[{Q\+String}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A membr function to get value stored in trie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & string whose meaning to find \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+String G\+UI supported String 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTrie_a504580e3f2302333ec5f0bbfbb7d72b9}\label{classTrie_a504580e3f2302333ec5f0bbfbb7d72b9}} 
+\index{Trie@{Trie}!insert@{insert}}
+\index{insert@{insert}!Trie@{Trie}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily bool Trie\+::insert (\begin{DoxyParamCaption}\item[{Q\+String}]{word,  }\item[{Q\+String}]{meaning }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A public membr function to insert the node/ new data into the trie. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & word whose meaning is to be stored \\
+\hline
+{\em meaning} & meaning of the given word \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool whether inserted successfully or not 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{trie_8h}{trie.\+h}\item 
+\hyperlink{trie_8cpp}{trie.\+cpp}\end{DoxyCompactItemize}
