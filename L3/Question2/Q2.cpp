@@ -11,13 +11,15 @@
 #include<bits/stdc++.h>
 #include <string>
 #include <algorithm>
+#include <chrono>
+using namespace std::chrono; 
 using namespace std;
 
 
 
 /// Structure to store data for the one node of linked list
 struct node {
-    /// varaible that stores the data in node
+    /// variable that stores the data in node
     int data;
     /// right link and down link for the node
     struct node* right; node* down;
@@ -48,6 +50,11 @@ void printAnswer();
 
 
 int main(){
+
+    
+    
+    
+
     struct nodeList* input = initialize();
 
     cout<<"Enter the value of n"<<endl;
@@ -61,7 +68,7 @@ int main(){
         insert(input,k);
     }
 
-    
+    auto start = high_resolution_clock::now();
     struct nodeList* dp = initialize();
 
     fillDp(dp,input);
@@ -89,7 +96,9 @@ int main(){
                     for(int m=j+2;m<=v[i];m++){
                         string str;
                         str = to_string(j+1);
+                        str=str + " ";
                         str = str+to_string(m);
+                        str=str + " ";
                         str = str+to_string(v[i]);
                         output.push_back(str);
                     }
@@ -104,7 +113,9 @@ int main(){
                     for(int m=j+2;m<=v[i];m++){
                         string str;
                         str = to_string(j+1);
+                        str=str + " ";
                         str = str+to_string(m);
+                        str=str + " ";
                         str = str+to_string(v[i]);
                         output.push_back(str);
                     }
@@ -117,6 +128,11 @@ int main(){
     cout<<" i j k in lexographical order \n";
     for (auto it=output.begin(); it!=output.end(); ++it)
     cout << " " << *it<<endl;
+
+    auto stop = high_resolution_clock::now();
+    auto duration =duration_cast<microseconds>(stop - start);
+    cout << "CPU Time taken "<< duration.count() << " microseconds" << endl;
+
     return 0;
 }
 

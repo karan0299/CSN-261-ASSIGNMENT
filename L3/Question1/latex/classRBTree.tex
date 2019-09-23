@@ -1,0 +1,72 @@
+\hypertarget{classRBTree}{}\section{R\+B\+Tree Class Reference}
+\label{classRBTree}\index{R\+B\+Tree@{R\+B\+Tree}}
+
+
+class for Reb\+Black Tree data structure.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classRBTree_a48388a82f66c0d8e39f1161cd066ecfc}\label{classRBTree_a48388a82f66c0d8e39f1161cd066ecfc}} 
+void {\bfseries rotate\+Left} (struct \hyperlink{structnode}{node} $\ast$\&, struct \hyperlink{structnode}{node} $\ast$\&)
+\item 
+\mbox{\Hypertarget{classRBTree_a05766c1d13ac874080adba1846d7f2b5}\label{classRBTree_a05766c1d13ac874080adba1846d7f2b5}} 
+void {\bfseries rotate\+Right} (struct \hyperlink{structnode}{node} $\ast$\&, struct \hyperlink{structnode}{node} $\ast$\&)
+\item 
+\mbox{\Hypertarget{classRBTree_a309da2938362e33c098e7698de9194c4}\label{classRBTree_a309da2938362e33c098e7698de9194c4}} 
+void {\bfseries set\+To\+R\+B\+Tree} (struct \hyperlink{structnode}{node} $\ast$\&, struct \hyperlink{structnode}{node} $\ast$\&)
+\item 
+void \hyperlink{classRBTree_a4b8c33ea38498194b3f31876283058ec}{insert} (int n)
+\begin{DoxyCompactList}\small\item\em A membr function to insert the node/ new data into the tree. \end{DoxyCompactList}\item 
+void \hyperlink{classRBTree_aff8e5c4479e6708da9a6cbfc276836a3}{inorder} ()
+\begin{DoxyCompactList}\small\item\em A protedted member function to print inorder\+Traversal of tree. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTree_a0399338ba77d466049c6e663dd9163ee}\label{classRBTree_a0399338ba77d466049c6e663dd9163ee}} 
+void \hyperlink{classRBTree_a0399338ba77d466049c6e663dd9163ee}{print\+R\+B\+Tree} ()
+\begin{DoxyCompactList}\small\item\em A public member function to print tree in levelwise indentation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classRBTree_aa2dcf0d6aa43fb2bf5bc82efd55ebb66}\label{classRBTree_aa2dcf0d6aa43fb2bf5bc82efd55ebb66}} 
+void \hyperlink{classRBTree_aa2dcf0d6aa43fb2bf5bc82efd55ebb66}{print\+Paths} ()
+\begin{DoxyCompactList}\small\item\em Function to print all paths to leaf node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class for Reb\+Black Tree data structure. 
+
+A more elaborate class description. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classRBTree_aff8e5c4479e6708da9a6cbfc276836a3}\label{classRBTree_aff8e5c4479e6708da9a6cbfc276836a3}} 
+\index{R\+B\+Tree@{R\+B\+Tree}!inorder@{inorder}}
+\index{inorder@{inorder}!R\+B\+Tree@{R\+B\+Tree}}
+\subsubsection{\texorpdfstring{inorder()}{inorder()}}
+{\footnotesize\ttfamily void R\+B\+Tree\+::inorder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A protedted member function to print inorder\+Traversal of tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & pointer to the current node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classRBTree_a4b8c33ea38498194b3f31876283058ec}\label{classRBTree_a4b8c33ea38498194b3f31876283058ec}} 
+\index{R\+B\+Tree@{R\+B\+Tree}!insert@{insert}}
+\index{insert@{insert}!R\+B\+Tree@{R\+B\+Tree}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void R\+B\+Tree\+::insert (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+A membr function to insert the node/ new data into the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & an integer argument that is data to be stored new node. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Q1.\+cpp\end{DoxyCompactItemize}

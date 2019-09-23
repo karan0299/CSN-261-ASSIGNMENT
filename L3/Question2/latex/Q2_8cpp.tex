@@ -1,0 +1,218 @@
+\hypertarget{Q2_8cpp}{}\section{Q2.\+cpp File Reference}
+\label{Q2_8cpp}\index{Q2.\+cpp@{Q2.\+cpp}}
+
+
+this file will contain all required definitions and basic utilities functions.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structnode}{node}
+\begin{DoxyCompactList}\small\item\em Structure to store data for the one node of linked list. \end{DoxyCompactList}\item 
+struct \hyperlink{structnodeList}{node\+List}
+\begin{DoxyCompactList}\small\item\em Structure to the store the pointer the head of the linked list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structnodeList}{node\+List} $\ast$ \hyperlink{Q2_8cpp_a06bc318f325422fef630e0045690be11}{initialize} ()
+\item 
+\hyperlink{structnodeList}{node\+List} $\ast$ \hyperlink{Q2_8cpp_ae308c89b6d12cef4f4b0bb08d3e0c7da}{initialize2d} (int n)
+\item 
+void \hyperlink{Q2_8cpp_a076abba2f9ccb3e9c9f3970c9832daca}{insert} (struct \hyperlink{structnodeList}{node\+List} $\ast$list, int new\+\_\+data)
+\item 
+void \hyperlink{Q2_8cpp_a117a016cf23effb4e9934e132e569cc7}{fill\+Dp} (struct \hyperlink{structnodeList}{node\+List} $\ast$dplist, struct \hyperlink{structnodeList}{node\+List} $\ast$inplist)
+\item 
+int \hyperlink{Q2_8cpp_a10b378cbd888272a3d1641e5ff323e1a}{find\+Max} (struct \hyperlink{structnodeList}{node\+List} $\ast$dplist)
+\item 
+int \hyperlink{Q2_8cpp_ae1a929e63699a7bf56be923deef4b26b}{get} (struct \hyperlink{structnodeList}{node\+List} $\ast$list, int m, int n)
+\item 
+void \hyperlink{Q2_8cpp_ad794af7a3922d56781d8964c2a72796b}{set\+Element} (struct \hyperlink{structnodeList}{node\+List} $\ast$list, int m, int n, int dt)
+\item 
+void \hyperlink{Q2_8cpp_a0763a5732f5ebbbc5519cef505411ca5}{count\+Answer} (struct \hyperlink{structnodeList}{node\+List} $\ast$calc, struct \hyperlink{structnodeList}{node\+List} $\ast$dp, int n)
+\item 
+void \hyperlink{Q2_8cpp_a4a7fb593f6df4cd32dd759ebee7d3fb3}{print\+Answer} ()
+\item 
+\mbox{\Hypertarget{Q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{Q2_8cpp_acf40520af3f90e4252425ef2d5bdb95a}\label{Q2_8cpp_acf40520af3f90e4252425ef2d5bdb95a}} 
+int \hyperlink{Q2_8cpp_acf40520af3f90e4252425ef2d5bdb95a}{ans} = 0
+\begin{DoxyCompactList}\small\item\em global variable which stores the total number of required triplets \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{Q2_8cpp_a590788f9318c2a5bda3f6bf813888144}\label{Q2_8cpp_a590788f9318c2a5bda3f6bf813888144}} 
+map$<$ int, vector$<$ int $>$ $>$ \hyperlink{Q2_8cpp_a590788f9318c2a5bda3f6bf813888144}{tree}
+\begin{DoxyCompactList}\small\item\em vector that stores the indices where cummulative xor is same \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this file will contain all required definitions and basic utilities functions. 
+
+\begin{DoxyAuthor}{Author}
+Karanpreet Singh
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Q2_8cpp_a0763a5732f5ebbbc5519cef505411ca5}\label{Q2_8cpp_a0763a5732f5ebbbc5519cef505411ca5}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!count\+Answer@{count\+Answer}}
+\index{count\+Answer@{count\+Answer}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{count\+Answer()}{countAnswer()}}
+{\footnotesize\ttfamily void count\+Answer (\begin{DoxyParamCaption}\item[{struct \hyperlink{structnodeList}{node\+List} $\ast$}]{calc,  }\item[{struct \hyperlink{structnodeList}{node\+List} $\ast$}]{dp,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+This method will be used to actually to actually count the number of required triplets \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em calc} & 2D linked List that the previous values of indices corresponding given cummulative xor value \\
+\hline
+{\em \hyperlink{structnodeList}{node\+List}} & 1D linked that stores the cummulative xor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_a117a016cf23effb4e9934e132e569cc7}\label{Q2_8cpp_a117a016cf23effb4e9934e132e569cc7}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!fill\+Dp@{fill\+Dp}}
+\index{fill\+Dp@{fill\+Dp}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{fill\+Dp()}{fillDp()}}
+{\footnotesize\ttfamily void fill\+Dp (\begin{DoxyParamCaption}\item[{struct \hyperlink{structnodeList}{node\+List} $\ast$}]{dplist,  }\item[{struct \hyperlink{structnodeList}{node\+List} $\ast$}]{inplist }\end{DoxyParamCaption})}
+
+This method will be used to create the cummulative xor linked list \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em dplist} & 1D linked that stores the cummulative xor \\
+\hline
+{\em inplist} & 1D linked from the triplets are to be counted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_a10b378cbd888272a3d1641e5ff323e1a}\label{Q2_8cpp_a10b378cbd888272a3d1641e5ff323e1a}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!find\+Max@{find\+Max}}
+\index{find\+Max@{find\+Max}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{find\+Max()}{findMax()}}
+{\footnotesize\ttfamily int find\+Max (\begin{DoxyParamCaption}\item[{struct \hyperlink{structnodeList}{node\+List} $\ast$}]{dplist }\end{DoxyParamCaption})}
+
+This method will be used to create individual node of a quad tree \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em dplist} & 1D linked that stores the cummulative xor \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_ae1a929e63699a7bf56be923deef4b26b}\label{Q2_8cpp_ae1a929e63699a7bf56be923deef4b26b}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!get@{get}}
+\index{get@{get}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily int get (\begin{DoxyParamCaption}\item[{struct \hyperlink{structnodeList}{node\+List} $\ast$}]{list,  }\item[{int}]{m,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+This method will be used to get the data from the particular node of the linked list \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em list} & 2D linked List that the previous values of indices corresponding given cummulative xor value \\
+\hline
+{\em n} & correspoding to which get downward linked list node value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_a06bc318f325422fef630e0045690be11}\label{Q2_8cpp_a06bc318f325422fef630e0045690be11}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!initialize@{initialize}}
+\index{initialize@{initialize}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \hyperlink{structnodeList}{node\+List} $\ast$ initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method will be used inintialize the 1D node \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_ae308c89b6d12cef4f4b0bb08d3e0c7da}\label{Q2_8cpp_ae308c89b6d12cef4f4b0bb08d3e0c7da}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!initialize2d@{initialize2d}}
+\index{initialize2d@{initialize2d}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{initialize2d()}{initialize2d()}}
+{\footnotesize\ttfamily \hyperlink{structnodeList}{node\+List} $\ast$ initialize2d (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+This method will be used inintialize the 2D node with the given data \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & data to be inserted into the node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_a076abba2f9ccb3e9c9f3970c9832daca}\label{Q2_8cpp_a076abba2f9ccb3e9c9f3970c9832daca}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!insert@{insert}}
+\index{insert@{insert}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{struct \hyperlink{structnodeList}{node\+List} $\ast$}]{list,  }\item[{int}]{new\+\_\+data }\end{DoxyParamCaption})}
+
+This method will be used to insert the node in the linked list \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em list} & pointer to the list to which data is to be inserted \\
+\hline
+{\em new\+\_\+data} & data to be inserted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_a4a7fb593f6df4cd32dd759ebee7d3fb3}\label{Q2_8cpp_a4a7fb593f6df4cd32dd759ebee7d3fb3}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!print\+Answer@{print\+Answer}}
+\index{print\+Answer@{print\+Answer}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{print\+Answer()}{printAnswer()}}
+{\footnotesize\ttfamily void print\+Answer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+This method will be used to print the number of required triplets \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_ad794af7a3922d56781d8964c2a72796b}\label{Q2_8cpp_ad794af7a3922d56781d8964c2a72796b}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!set\+Element@{set\+Element}}
+\index{set\+Element@{set\+Element}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{set\+Element()}{setElement()}}
+{\footnotesize\ttfamily void set\+Element (\begin{DoxyParamCaption}\item[{struct \hyperlink{structnodeList}{node\+List} $\ast$}]{list,  }\item[{int}]{m,  }\item[{int}]{n,  }\item[{int}]{dt }\end{DoxyParamCaption})}
+
+This method will be used set the node of 2D linked list according the given data \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em list} & Pointer to the 2D linked list \\
+\hline
+{\em n} & correspoding to which downward linked list is filled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}

@@ -1,16 +1,37 @@
+/** 
+*@file Q2.cpp
+*@brief this  file will contain all required 
+*definitions and basic utilities functions.
+*
+*@author Karanpreet Singh
+*
+*@date 04/08/19
+*/
+
 #include <iostream>
 #include <cmath>
 #include <bits/stdc++.h> 
+#include <chrono>
 using namespace std;
+using namespace std::chrono; 
 
+/// Enumeration containing constants
 enum Color {RED, BLACK};
+
+/// array fro storing the inorder traversal of BST
 int arr[1000];
+
+/// store the number of nodes in tree
 int size = 0;
   
+/// structure representing the node of the tree
 struct node
 { 
+    /// real data element for the node
     int data; 
-    bool color; 
+    /// bool representing the color of node on red Black tree
+    bool color;
+    /// links to the left child , right child and the parent node 
     node *left, *right, *parent; 
 }; 
 
@@ -27,55 +48,115 @@ void printTreeHelper( struct node * root,int level);
 void inorderHelper(struct node *root) ;
 
 void printPathsHelper (struct node * root);
-void printTopToBottomPath(struct node* curr, map<struct node*, struct node*> parent); 
+void printPathToLeaf(struct node* curr, map<struct node*, struct node*> parent); 
 void printRootToLeaf(struct node* root);
 
+
+//!  class fro BST structure. 
+/*!
+  A more elaborate class description.
+*/
 class BST {
 public:
+    //! A class construction to initialize the root of tree
+    /*!
+    */
     BST () { root = NULL; }
+    //! A membr function to insert the node/ new data into the tree
+    /*!
+      \param item an integer argument that is data to be stored new node.
+      \return bool whether inserted successfully or not
+    */
     bool insert(int item) { return insert(item,root); };
+    //! A public member function the return the protected member function for inorder traversal
+    /*!
+        \return private inoderTraversal function
+    */
     void inorderTraversal() const { inorderTraversal(root);};
+     //! A public member functionto dtore the inoder travelsal of the BST
+    /*!
+        \return protected function inoderTravel
+    */
     void inorderTravel() const { inorderTravel(root);};
+     //! A public member function  that to get height of particular node  
+    /*!
+        \return the integer value of height
+    */
     int height() { return height(root); }
+     //! A public member function to print tree in levelwise indentation
+    /*!
+    */
     void printTree() { printTree(root,0); }
+     //! Function to print all paths to leaf node
+    /*!
+    */
     void printPaths();
+    /// pointer to root node of tree
     struct node* root;
      
 protected:
+    //! A protedted member function to print  inorderTraversal of tree
+    /*!
+        \param curr pointer to the current node
+    */
     void inorderTraversal(const struct node* curr) const;
+    //! A public member function to get th inorder traversal array 
+    /*!
+        \param curr pointer to the current node
+    */
     void inorderTravel(const struct node* curr) const;
+    //! A membr function to insert the node/ new data into the tree
+    /*!
+      \param item an integer argument that is data to be stored new node.
+      \param curr pointer to the current node
+      \return bool whether inserted successfully or not
+    */
     bool insert(int item,struct node* curr);
+    //! A public member function  that to get height of particular node  
+    /*!
+        \param curr pointer to the current node
+        \return the integer value of height
+    */
     int height(struct node* curr);
+     //! A public member function to print tree in levelwise indentation
+    /*!
+    */
     void printTree(struct node* curr, int level);
 };
 
+//!  class for RebBlack Tree data structure. 
+/*!
+  A more elaborate class description.
+*/
 class RBTree 
 { 
 private: 
+    /// pointer to root node of tree
     struct node *root; 
 public: 
     void rotateLeft(struct node *&, struct node *&); 
     void rotateRight(struct node *&, struct node *&); 
     void setToRBTree(struct node *&, struct node *&);  
     RBTree() { root = NULL; } 
+     //! A membr function to insert the node/ new data into the tree
+    /*!
+      \param n an integer argument that is data to be stored new node.
+    */
     void insert(int n); 
+    //! A protedted member function to print  inorderTraversal of tree
+    /*!
+        \param curr pointer to the current node
+    */
     void inorder(); 
-    void printTree();
+     //! A public member function to print tree in levelwise indentation
+    /*!
+    */
+    void printRBTree();
+    //! Function to print all paths to leaf node
+    /*!
+    */
     void printPaths();
 };
-
-
-
-node *copy(node *root) {
-     node *new_root;
-     if(root!=NULL){
-         new_root=initializeNode(root->data);
-         new_root->left=copy(root->left);
-         new_root->right=copy(root->right);
-     } else return NULL;
-     return new_root;
- }
-
 
 
 int main() {
@@ -84,9 +165,12 @@ int main() {
     BST avl;
 
     int op;
+    auto start = high_resolution_clock::now();
+    auto stop = high_resolution_clock::now();
+    auto duration =duration_cast<microseconds>(stop - start);
     
     while(true){
-        cout<<"\n-------------------------------------------------------------------"<<endl;
+        cout<<"\n------------------------------------------------------------------------------"<<endl;
         cout<<"1.To insert a node in the BST and in the red-black tree \n";
         cout<<"2.To create AVL tree from the inorder traversal of the BST\n";
         cout<<"3.To print the inorder traversal of the BST/AVL/red-black tree\n";
@@ -100,25 +184,31 @@ int main() {
                         cout<<"Enter number"<<endl;
                         int num;
                         cin>>num;
+                        start = high_resolution_clock::now(); 
                         bst.insert(num);
                         rbt.insert(num);
+                        stop = high_resolution_clock::now();
+                        duration = duration_cast<microseconds>(stop - start); 
                         size++;
                         cout<<num<<" inserted in both reb black and BST "<<endl;
+                        cout << "CPU Time taken for insertion: "<< duration.count() << " microseconds" << endl;
                         break;
 
             case 2 :    
+                        start = high_resolution_clock::now(); 
                         bst.inorderTravel();
                         avl.root = NULL;
-                        // avl.root = copy(bst.root);
-                        // avl.root = convertToAVL(avl.root);
                         for(int i =0 ;i<size;i++){
                            avl.root = insertInAvl(avl.root,arr[i]);
                         }
-
+                        stop = high_resolution_clock::now();
+                        duration = duration_cast<microseconds>(stop - start);
                         cout<<"Binary Search Tree converted to AVL"<<endl;
+                        cout << "CPU Time taken AVL tree creation "<< duration.count() << " microseconds" << endl;
                         break;
 
             case 3 :    
+                        start = high_resolution_clock::now(); 
                         cout<<"Inorder Traversal for Binary search Tree "<<endl;
                         bst.inorderTraversal();
                         cout<<"\nInorder Traversal for AVL Tree\n";
@@ -128,10 +218,14 @@ int main() {
                             avl.inorderTraversal();
                         cout<<"\nInorder Traversal for Red Black Tree\n";
                         rbt.inorder();
-                        cout<<"\n";
+                        cout<<"\n\n";
+                        stop = high_resolution_clock::now();
+                        duration = duration_cast<microseconds>(stop - start);
+                        cout << "CPU Time taken : "<< duration.count() << " microseconds" << endl;
                         break;
 
             case 4 :    
+                        start = high_resolution_clock::now(); 
                         cout<<"Paths for Binary search Tree "<<endl;
                         bst.printPaths();
                         cout<<"\nPaths for AVL Tree\n";
@@ -142,9 +236,13 @@ int main() {
                         cout<<"\nPaths for Red Black Tree\n";
                         rbt.printPaths();
                         cout<<"\n";
+                        stop = high_resolution_clock::now();
+                        duration = duration_cast<microseconds>(stop - start);
+                        cout << "CPU Time taken : "<< duration.count() << " microseconds" << endl;
                         break;
 
             case 5 : 
+                        start = high_resolution_clock::now(); 
                         cout<<"Level wise indentation printing for Binary search Tree "<<endl;
                         bst.printTree();
                         cout<<"\nLevel wise indentation printing for AVL Tree\n";
@@ -153,8 +251,11 @@ int main() {
                         else 
                             avl.printTree();    
                         cout<<"\nLevel wise indentation printing for Red Black Tree\n";
-                        rbt.printTree();
+                        rbt.printRBTree();
                         cout<<"\n";
+                        stop = high_resolution_clock::now();
+                        duration = duration_cast<microseconds>(stop - start);
+                        cout << "CPU Time taken : "<< duration.count() << " microseconds" << endl;
                         break;
 
             case 6 :
@@ -166,6 +267,12 @@ int main() {
 
 }
 
+/**
+*This method will be used initialize the node with the given data
+*@author Karanpreet Singh
+*@param item data to be inserted into the node
+*@date 04/08/19
+*/
 static  node * initializeNode(int item){
     struct node * new_node = new (struct node);
     new_node->left = NULL;
@@ -174,6 +281,12 @@ static  node * initializeNode(int item){
     return new_node;
 }
 
+/**
+*This method will be used to apply the left rotation
+*@author Karanpreet Singh
+*@param x root node aroud which rotation is to be done
+*@date 04/08/19
+*/
 static node *leftRotation(struct node *x)  {  
     struct node *y = x->right;  
     struct node *T2 = y->left;  
@@ -185,6 +298,12 @@ static node *leftRotation(struct node *x)  {
     return y;  
 } 
 
+/**
+*This method will be used to apply the right rotation
+*@author Karanpreet Singh
+*@param y root node aroud which rotation is to be done
+*@date 04/08/19
+*/
 static node *rightRotation(struct node *y) {  
     struct node *x = y->left;  
     struct node *T2 = x->right;  
@@ -196,6 +315,12 @@ static node *rightRotation(struct node *y) {
     return x;  
 }  
 
+/**
+*This method will be used to get the height of the node
+*@author Karanpreet Singh
+*@param root node to get the height of 
+*@date 04/08/19
+*/
 static int getHeight ( struct node * root ){
    if(!root)
         return 0;
@@ -233,7 +358,7 @@ void BST :: inorderTraversal(const struct node * root) const {
     if (root != NULL) {
         inorderTraversal(root -> left);
   
-        cout<<root -> data<<endl;
+        cout<<root -> data<<" ";
         inorderTraversal(root -> right);
     }
 }
@@ -262,8 +387,8 @@ void BST :: printTree( struct node * root,int level) {
         cout<<root -> data<<"["<<abs(getHeight(root->left)-getHeight(root->right))<<"]"<<endl;
         else
         cout<<root -> data<<endl;
-        printTreeHelper(root -> left,level+1);   
-        printTreeHelper(root -> right,level+1);
+        printTree(root -> left,level+1);   
+        printTree(root -> right,level+1);
     }
 }
 
@@ -272,7 +397,12 @@ void BST:: printPaths(){
     printPathsHelper(root);
 }
 
-
+/**
+*This method will be used initialize the node for the Red Black tree with the given data
+*@author Karanpreet Singh
+*@param data data to be inserted into the node
+*@date 04/08/19
+*/
 node* initializeNodeRB(int data){
     struct node* new_node = new (struct node);
     new_node->data = data; 
@@ -281,6 +411,12 @@ node* initializeNodeRB(int data){
     return new_node;
 }
 
+/**
+*This method is helper function to print inorder traversal for 
+*@author Karanpreet Singh
+*@param item data to be inserted into the node
+*@date 04/08/19
+*/
 void inorderHelper(struct node *root) 
 { 
     if (root == NULL) 
@@ -291,15 +427,18 @@ void inorderHelper(struct node *root)
     inorderHelper(root->right); 
 } 
   
-/* A utility function to insert a new node with given key 
-   in BST */
+/**
+*This method A utility function to insert a new node with given key in BST  
+*@author Karanpreet Singh
+*@param root pointer to the root node of the tree
+*@param new_node pointer to the new node
+*@date 04/08/19
+*/
 node* normalBSTInsert(struct node* root, struct node *new_node) 
 { 
-    /* If the tree is empty, return a new node */
     if (root == NULL) 
        return new_node; 
   
-    /* Otherwise, recur down the tree */
     if (new_node->data < root->data) 
     { 
         root->left  = normalBSTInsert(root->left, new_node); 
@@ -311,7 +450,6 @@ node* normalBSTInsert(struct node* root, struct node *new_node)
         root->right->parent = root; 
     } 
   
-    /* return the (unchanged) node pointer */
     return root; 
 } 
   
@@ -376,16 +514,11 @@ void RBTree::setToRBTree(struct node *&root, struct node *&new_node)
         parent_node = new_node->parent; 
         grand_parent_node = new_node->parent->parent; 
   
-        /*  Case : A 
-            Parent of pt is left child of Grand-parent of pt */
         if (parent_node == grand_parent_node->left) 
         { 
   
             struct node *uncle_node = grand_parent_node->right; 
   
-            /* Case : 1 
-               The uncle of pt is also red 
-               Only Recoloring required */
             if (uncle_node != NULL && uncle_node->color == RED) 
             { 
                 grand_parent_node->color = RED; 
@@ -396,9 +529,6 @@ void RBTree::setToRBTree(struct node *&root, struct node *&new_node)
   
             else
             { 
-                /* Case : 2 
-                   pt is right child of its parent 
-                   Left-rotation required */
                 if (new_node == parent_node->right) 
                 { 
                     rotateLeft(root, parent_node); 
@@ -406,24 +536,16 @@ void RBTree::setToRBTree(struct node *&root, struct node *&new_node)
                     parent_node = new_node->parent; 
                 } 
   
-                /* Case : 3 
-                   pt is left child of its parent 
-                   Right-rotation required */
                 rotateRight(root, grand_parent_node); 
                 swap(parent_node->color, grand_parent_node->color); 
                 new_node = parent_node; 
             } 
         } 
   
-        /* Case : B 
-           Parent of pt is right child of Grand-parent of pt */
         else
         { 
             struct node *uncle_node = grand_parent_node->left; 
   
-            /*  Case : 1 
-                The uncle of pt is also red 
-                Only Recoloring required */
             if ((uncle_node != NULL) && (uncle_node->color == RED)) 
             { 
                 grand_parent_node->color = RED; 
@@ -433,9 +555,6 @@ void RBTree::setToRBTree(struct node *&root, struct node *&new_node)
             } 
             else
             { 
-                /* Case : 2 
-                   pt is left child of its parent 
-                   Right-rotation required */
                 if (new_node == parent_node->left) 
                 { 
                     rotateRight(root, parent_node); 
@@ -443,9 +562,6 @@ void RBTree::setToRBTree(struct node *&root, struct node *&new_node)
                     parent_node = new_node->parent; 
                 } 
   
-                /* Case : 3 
-                   pt is right child of its parent 
-                   Left-rotation required */
                 rotateLeft(root, grand_parent_node); 
                 swap(parent_node->color, grand_parent_node->color); 
                 new_node = parent_node; 
@@ -456,107 +572,114 @@ void RBTree::setToRBTree(struct node *&root, struct node *&new_node)
     root->color = BLACK; 
 } 
   
-// Function to insert a new node with given data 
 void RBTree::insert(int data) 
 { 
     struct node *new_node = initializeNodeRB(data); 
   
-    // Do a normal BST insert 
     root = normalBSTInsert(root, new_node); 
   
-    // fix Red Black Tree violations 
     setToRBTree(root, new_node); 
 } 
   
-// Function to do inorder and level order traversals 
 void RBTree:: inorder() {  
     inorderHelper(root);
 } 
 
+
+/**
+*This helper method to print the paths to leaf
+*@author Karanpreet Singh
+*@param root pointer to the root node of the tree
+*@param level level of the current node
+*@date 04/08/19
+*/
 void printTreeHelper( struct node * root,int level) {
     if (root != NULL) {
        for(int i=0;i<level;i++){
         cout<<"\t";
         }
-        if(root->left||root->right)
-        cout<<root -> data<<"["<<abs(getHeight(root->left)-getHeight(root->right))<<"]"<<"["<<root->color<<"]"<<endl;
-        else
-        cout<<root -> data<<"["<<root->color<<"]"<<endl;
+        if(root->left||root->right){
+        cout<<root -> data<<"["<<abs(getHeight(root->left)-getHeight(root->right))<<"]";
+            if(root->color==0){
+                cout<<"["<<"RED"<<"]"<<endl;
+            }
+            else{
+                cout<<"["<<"Black"<<"]"<<endl;
+            }
+        }
+        else {
+            cout<<root -> data;
+            if(root->color==0){
+                cout<<"["<<"RED"<<"]"<<endl;
+            }
+            else{
+                cout<<"["<<"Black"<<"]"<<endl;
+            }
+        }
         printTreeHelper(root -> left,level+1);   
         printTreeHelper(root -> right,level+1);
     }
 }
 
-void RBTree :: printTree() {
+void RBTree :: printRBTree() {
     printTreeHelper(root,0);
 }
 
 
-/* Function to print root to leaf path for a leaf 
-   using parent nodes stored in map */
-void printTopToBottomPath(struct node* curr, map<struct node*, struct node*> parent) 
+/**
+*Function to print root to leaf path for a leaf using parent nodes stored in map
+*@author Karanpreet Singh
+*@param curr pointer to the current node of the tree
+*@param parent a map haing parent of the current node
+*@date 04/08/19
+*/
+void printPathToLeaf(struct node* current, map<struct node*, struct node*> parent) 
 { 
-    stack<struct node*> stk; 
-  
-    // start from leaf node and keep on pushing 
-    // nodes into stack till root node is reached 
-    while (curr) 
+    stack<struct node*> nodeStack; 
+
+    while (current) 
     { 
-        stk.push(curr); 
-        curr = parent[curr]; 
+        nodeStack.push(current); 
+        current = parent[current]; 
     } 
   
-    // Start popping nodes from stack and print them 
-    while (!stk.empty()) 
+    while (!nodeStack.empty()) 
     { 
-        curr = stk.top(); 
-        stk.pop(); 
-        cout << curr->data << " "; 
+        current = nodeStack.top(); 
+        nodeStack.pop(); 
+        cout << current->data << " "; 
     } 
     cout << endl; 
 } 
   
-/* An iterative function to do preorder traversal 
-   of binary tree  and print root to leaf path 
-   without using recursion */
+
+/**
+*An iterative function to do preorder traversal of binary tree  and print root to leaf path without using recursion
+*@author Karanpreet Singh
+*@param root pointer to the rootnode of the tree
+*@date 04/08/19
+*/
 void printRootToLeaf(struct node* root) { 
-    // Corner Case 
     if (root == NULL) 
         return; 
   
-    // Create an empty stack and push root to it 
     stack<struct node*> nodeStack; 
     nodeStack.push(root); 
-  
-    // Create a map to store parent pointers of binary 
-    // tree nodes 
+
     map<struct node*, struct node*> parent; 
   
-    // parent of root is NULL 
     parent[root] = NULL; 
   
-    /* Pop all items one by one. Do following for 
-       every popped item 
-        a) push its right child and set its parent 
-           pointer 
-        b) push its left child and set its parent 
-           pointer 
-       Note that right child is pushed first so that 
-       left is processed first */
+
     while (!nodeStack.empty()) 
     { 
-        // Pop the top item from stack 
+
         struct node* current = nodeStack.top(); 
         nodeStack.pop(); 
-  
-        // If leaf node encountered, print Top To 
-        // Bottom path 
+
         if (!(current->left) && !(current->right)) 
-            printTopToBottomPath(current, parent); 
-  
-        // Push right & left children of the popped node 
-        // to stack. Also set their parent pointer in 
-        // the map 
+            printPathToLeaf(current, parent); 
+ 
         if (current->right) 
         { 
             parent[current->right] = current; 
@@ -575,14 +698,12 @@ void printPathsHelper (struct node * root){
     return;
     printRootToLeaf(root);
     printPathsHelper(root->left);
-    printPathsHelper(root->left);
+    printPathsHelper(root->right);
 }
 
 void RBTree :: printPaths(){
     printPathsHelper(root);
 }
-
-
 
 
 int getBalance(node *N)  {  
@@ -591,9 +712,14 @@ int getBalance(node *N)  {
     return getHeight(N->left) - getHeight(N->right);  
 }  
 
-
+/**
+*Function to insert the node in the AVL tree
+*@author Karanpreet Singh
+*@param Node pointer to the root of the tree
+*@param data to be inserted into the new node
+*@date 04/08/19
+*/
 node* insertInAvl(node* Node, int data) {  
-    /* 1. Perform the normal BST insertion */
     if (Node == NULL)  
         return(initializeNode(data));  
   
@@ -601,41 +727,28 @@ node* insertInAvl(node* Node, int data) {
         Node->left = insertInAvl(Node->left, data);  
     else if (data > Node->data)  
         Node->right = insertInAvl(Node->right, data);  
-    else // Equal keys are not allowed in BST  
+    else 
         return Node;  
   
-    /* 2. Update height of this ancestor node */ 
-  
-    /* 3. Get the balance factor of this ancestor  
-        node to check whether this node became  
-        unbalanced */
     int balance = getBalance(Node);  
-  
-    // If this node becomes unbalanced, then  
-    // there are 4 cases  
-  
-    // Left Left Case  
+   
     if (balance > 1 && data < Node->left->data)  
         return rightRotation(Node);  
   
-    // Right Right Case  
     if (balance < -1 && data > Node->right->data)  
         return leftRotation(Node);  
   
-    // Left Right Case  
     if (balance > 1 && data > Node->left->data)  
     {  
         Node->left = leftRotation(Node->left);  
         return rightRotation(Node);  
     }  
   
-    // Right Left Case  
     if (balance < -1 && data < Node->right->data)  
     {  
         Node->right = rightRotation(Node->right);  
         return leftRotation(Node);  
     }  
   
-    /* return the (unchanged) node pointer */
     return Node;  
 }  

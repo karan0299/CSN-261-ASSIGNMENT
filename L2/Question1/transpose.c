@@ -55,8 +55,10 @@ int main(int argc, char** argv) {
     start = clock ();
 
     /// non zero exit if arguments are less than 5 or value of n is less than 1
-    if(argc<5||atoi(argv[1])<1)
+    if(argc<5||atoi(argv[1])<1){
+        printf("invalid arguments");
         exit(EXIT_FAILURE);
+    }
 
     int n = atoi(argv[1]);
     int a = atoi(argv[2]);
@@ -89,7 +91,7 @@ int main(int argc, char** argv) {
       
       for(int j=0;j<5;j++){
         if(buff[j]=='\n'){
-          buff[j]='\0';
+          buff[j]='-';
           break;
         }
       }

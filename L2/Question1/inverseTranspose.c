@@ -91,7 +91,7 @@ int main(int argc, char** argv) {
             continue;
             input[i][m++] = buff[k]; 
         } 
-        printf("%s",input[i]);
+        //printf("%s",input[i]);
         i++;
     }
     
@@ -121,6 +121,8 @@ void decrypt(char **input,int a_inverse,int b,int n,int r,FILE* fp2){
             if(input[i][a_inverse*m%n]=='\\'){
             continue;
             }
+            else if(input[i][a_inverse*m%n]=='-')
+            fprintf(fp2,"\n");
             else{
             fprintf(fp2,"%c", input[i][a_inverse*m%n]);
             }

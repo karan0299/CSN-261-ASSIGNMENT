@@ -137,7 +137,7 @@ void main() {
     start = clock ();
 
     /// Pointer to file containing region in form of array
-    FILE * fp = fopen("sampleinput.txt","r");
+    FILE * fp = fopen("sampleinput2.txt","r");
 
     char ch[1024];
 
@@ -173,6 +173,13 @@ void main() {
         m=m+2;
         }
         row++ ;
+    }
+    
+    for(int i=0;i<size;i++){
+        for(int j=0;j<size;j++){
+            printf("%d ",arr[i][j]);
+        }
+        printf("\n");
     }
     
     int **max_array;

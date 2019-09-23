@@ -1,0 +1,111 @@
+\hypertarget{transpose_8c}{}\section{transpose.\+c File Reference}
+\label{transpose_8c}\index{transpose.\+c@{transpose.\+c}}
+
+
+this header file will contain all required definitions and basic utilities functions.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{transpose_8c_ab4c9a7100b4a58b94e30a2691452d747}{encrypt} (char $\ast$$\ast$input, char $\ast$$\ast$output, int a, int b, int n, int r, F\+I\+LE $\ast$fp1)
+\item 
+bool \hyperlink{transpose_8c_a0683e038a239223d81abaac88bd63e21}{gcd} (int n, int a)
+\item 
+int \hyperlink{transpose_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this header file will contain all required definitions and basic utilities functions. 
+
+\begin{DoxyAuthor}{Author}
+Karanpreet Singh
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{transpose_8c_ab4c9a7100b4a58b94e30a2691452d747}\label{transpose_8c_ab4c9a7100b4a58b94e30a2691452d747}} 
+\index{transpose.\+c@{transpose.\+c}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!transpose.\+c@{transpose.\+c}}
+\subsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily void encrypt (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{input,  }\item[{char $\ast$$\ast$}]{output,  }\item[{int}]{a,  }\item[{int}]{b,  }\item[{int}]{n,  }\item[{int}]{r,  }\item[{F\+I\+LE $\ast$}]{fp1 }\end{DoxyParamCaption})}
+
+This method will be used to encrypted the input file based on encryption key provided \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em input} & holds the data which is to be encrypted \\
+\hline
+{\em output} & array in which encrypted data is stored \\
+\hline
+{\em a} & one parameter of encryption key \\
+\hline
+{\em b} & another parameter of encryption key \\
+\hline
+{\em n} & another paramneter of encryption key \\
+\hline
+{\em r} & contains number of 5 length words \\
+\hline
+{\em fp1} & pointer to file in which encrypted data is written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{transpose_8c_a0683e038a239223d81abaac88bd63e21}\label{transpose_8c_a0683e038a239223d81abaac88bd63e21}} 
+\index{transpose.\+c@{transpose.\+c}!gcd@{gcd}}
+\index{gcd@{gcd}!transpose.\+c@{transpose.\+c}}
+\subsubsection{\texorpdfstring{gcd()}{gcd()}}
+{\footnotesize\ttfamily bool gcd (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+This method will be used to check if gcd of two numbers is unity or not \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Number 1 \\
+\hline
+{\em a} & Number 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{transpose_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{transpose_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{transpose.\+c@{transpose.\+c}!main@{main}}
+\index{main@{main}!transpose.\+c@{transpose.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+This method will be used to control the flow of program \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Contains number of command line arguments given \\
+\hline
+{\em argv} & array which holds all the commandline arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+to mark start and end of cpu clock
+
+store the time taken by cpu to perform operation
+
+non zero exit if arguments are less than 5 or value of n is less than 1
+
+checks if gcd of a and n is 1
+
+input char array holds the arguments to be encrypted 

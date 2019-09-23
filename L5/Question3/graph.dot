@@ -1,0 +1,7 @@
+graph prim{
+A--B[label = 4];
+B--C[label = 2];
+C--D[label = 3];
+D--E[label = 3];
+C--F[label = 2];
+}

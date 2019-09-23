@@ -1,0 +1,123 @@
+\hypertarget{inverseTranspose_8c}{}\section{inverse\+Transpose.\+c File Reference}
+\label{inverseTranspose_8c}\index{inverse\+Transpose.\+c@{inverse\+Transpose.\+c}}
+
+
+this header file will contain all required definitions and basic utilities functions.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{inverseTranspose_8c_a2df33d3381c8abbdf32f9c0fa2d88b0f}{decrypt} (char $\ast$$\ast$input, int a\+\_\+inverse, int b, int n, int r, F\+I\+LE $\ast$fp2)
+\item 
+int \hyperlink{inverseTranspose_8c_ad8a50fa1b5c727a1da905c1b9071aec4}{inverse} (int a, int n)
+\item 
+bool \hyperlink{inverseTranspose_8c_a0683e038a239223d81abaac88bd63e21}{gcd} (int n, int a)
+\item 
+int \hyperlink{inverseTranspose_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this header file will contain all required definitions and basic utilities functions. 
+
+\begin{DoxyAuthor}{Author}
+Karanpreet Singh
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{inverseTranspose_8c_a2df33d3381c8abbdf32f9c0fa2d88b0f}\label{inverseTranspose_8c_a2df33d3381c8abbdf32f9c0fa2d88b0f}} 
+\index{inverse\+Transpose.\+c@{inverse\+Transpose.\+c}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!inverse\+Transpose.\+c@{inverse\+Transpose.\+c}}
+\subsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily void decrypt (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{input,  }\item[{int}]{a\+\_\+inverse,  }\item[{int}]{b,  }\item[{int}]{n,  }\item[{int}]{r,  }\item[{F\+I\+LE $\ast$}]{fp2 }\end{DoxyParamCaption})}
+
+This method will be used to decrypted the input file based on decryption key provided \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em input} & holds the data which is to be decrypted \\
+\hline
+{\em a\+\_\+inverse} & one ot the parameter of decryption key \\
+\hline
+{\em b} & another parameter of decryption key \\
+\hline
+{\em n} & another paramneter of decryption key \\
+\hline
+{\em r} & contains number of 5 length words \\
+\hline
+{\em fp2} & pointer to file in which decrypted data is written \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{inverseTranspose_8c_a0683e038a239223d81abaac88bd63e21}\label{inverseTranspose_8c_a0683e038a239223d81abaac88bd63e21}} 
+\index{inverse\+Transpose.\+c@{inverse\+Transpose.\+c}!gcd@{gcd}}
+\index{gcd@{gcd}!inverse\+Transpose.\+c@{inverse\+Transpose.\+c}}
+\subsubsection{\texorpdfstring{gcd()}{gcd()}}
+{\footnotesize\ttfamily bool gcd (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{a }\end{DoxyParamCaption})}
+
+This method will be used to check if gcd of two numbers is unity or not \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & Number 1 \\
+\hline
+{\em a} & Number 2 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{inverseTranspose_8c_ad8a50fa1b5c727a1da905c1b9071aec4}\label{inverseTranspose_8c_ad8a50fa1b5c727a1da905c1b9071aec4}} 
+\index{inverse\+Transpose.\+c@{inverse\+Transpose.\+c}!inverse@{inverse}}
+\index{inverse@{inverse}!inverse\+Transpose.\+c@{inverse\+Transpose.\+c}}
+\subsubsection{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily int inverse (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+This method will be used to \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{inverseTranspose_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{inverseTranspose_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{inverse\+Transpose.\+c@{inverse\+Transpose.\+c}!main@{main}}
+\index{main@{main}!inverse\+Transpose.\+c@{inverse\+Transpose.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+This method will be used to control the flow of program \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Contains number of command line arguments given \\
+\hline
+{\em argv} & array which holds all the commandline arguments \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+to mark start and end of cpu clock
+
+store the time taken by cpu to perform operation
+
+non zero exit if arguments are less than 5 or value of n is less than 1
+
+checks if gcd of a and n is 1 

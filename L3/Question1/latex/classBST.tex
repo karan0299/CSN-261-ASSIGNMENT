@@ -1,0 +1,185 @@
+\hypertarget{classBST}{}\section{B\+ST Class Reference}
+\label{classBST}\index{B\+ST@{B\+ST}}
+
+
+class fro \hyperlink{classBST}{B\+ST} structure.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBST_abc17123a0367c3b8ad0382eeb3ad3178}\label{classBST_abc17123a0367c3b8ad0382eeb3ad3178}} 
+\hyperlink{classBST_abc17123a0367c3b8ad0382eeb3ad3178}{B\+ST} ()
+\begin{DoxyCompactList}\small\item\em A class construction to initialize the root of tree. \end{DoxyCompactList}\item 
+bool \hyperlink{classBST_a5ab5b12888965cf4a366c9547361bc46}{insert} (int item)
+\begin{DoxyCompactList}\small\item\em A membr function to insert the node/ new data into the tree. \end{DoxyCompactList}\item 
+void \hyperlink{classBST_ac2be220d080c4ca19f5741a0a8458837}{inorder\+Traversal} () const
+\begin{DoxyCompactList}\small\item\em A public member function the return the protected member function for inorder traversal. \end{DoxyCompactList}\item 
+void \hyperlink{classBST_aba9736b7dae49342204347347f3008a9}{inorder\+Travel} () const
+\begin{DoxyCompactList}\small\item\em A public member functionto dtore the inoder travelsal of the \hyperlink{classBST}{B\+ST}. \end{DoxyCompactList}\item 
+int \hyperlink{classBST_aa39f19e438fcc809abbf105bc0441952}{height} ()
+\begin{DoxyCompactList}\small\item\em A public member function that to get height of particular node. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBST_aa01a4e3c8c730f3597ebe014a8c5f3b7}\label{classBST_aa01a4e3c8c730f3597ebe014a8c5f3b7}} 
+void \hyperlink{classBST_aa01a4e3c8c730f3597ebe014a8c5f3b7}{print\+Tree} ()
+\begin{DoxyCompactList}\small\item\em A public member function to print tree in levelwise indentation. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBST_a81d0521bfe518d9556af83199abb1f35}\label{classBST_a81d0521bfe518d9556af83199abb1f35}} 
+void \hyperlink{classBST_a81d0521bfe518d9556af83199abb1f35}{print\+Paths} ()
+\begin{DoxyCompactList}\small\item\em Function to print all paths to leaf node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBST_a649f05efb8f63efa407101a485319f2d}\label{classBST_a649f05efb8f63efa407101a485319f2d}} 
+struct \hyperlink{structnode}{node} $\ast$ \hyperlink{classBST_a649f05efb8f63efa407101a485319f2d}{root}
+\begin{DoxyCompactList}\small\item\em pointer to root node of tree \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classBST_a3ed595e801648f5c145f145c371489b4}{inorder\+Traversal} (const struct \hyperlink{structnode}{node} $\ast$curr) const
+\begin{DoxyCompactList}\small\item\em A protedted member function to print inorder\+Traversal of tree. \end{DoxyCompactList}\item 
+void \hyperlink{classBST_ab26627cb83fe02abc1940e61b5b32048}{inorder\+Travel} (const struct \hyperlink{structnode}{node} $\ast$curr) const
+\begin{DoxyCompactList}\small\item\em A public member function to get th inorder traversal array. \end{DoxyCompactList}\item 
+bool \hyperlink{classBST_ac6e2b74e41a615fa4ccc1b7de4981559}{insert} (int item, struct \hyperlink{structnode}{node} $\ast$curr)
+\begin{DoxyCompactList}\small\item\em A membr function to insert the node/ new data into the tree. \end{DoxyCompactList}\item 
+int \hyperlink{classBST_a78398f0b59f1459c979fd364bdba5844}{height} (struct \hyperlink{structnode}{node} $\ast$curr)
+\begin{DoxyCompactList}\small\item\em A public member function that to get height of particular node. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBST_ae7baf9b6e337102a9b611a2b21225bd5}\label{classBST_ae7baf9b6e337102a9b611a2b21225bd5}} 
+void \hyperlink{classBST_ae7baf9b6e337102a9b611a2b21225bd5}{print\+Tree} (struct \hyperlink{structnode}{node} $\ast$curr, int level)
+\begin{DoxyCompactList}\small\item\em A public member function to print tree in levelwise indentation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class fro \hyperlink{classBST}{B\+ST} structure. 
+
+A more elaborate class description. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classBST_aa39f19e438fcc809abbf105bc0441952}\label{classBST_aa39f19e438fcc809abbf105bc0441952}} 
+\index{B\+ST@{B\+ST}!height@{height}}
+\index{height@{height}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{height()}{height()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int B\+S\+T\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A public member function that to get height of particular node. 
+
+\begin{DoxyReturn}{Returns}
+the integer value of height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_a78398f0b59f1459c979fd364bdba5844}\label{classBST_a78398f0b59f1459c979fd364bdba5844}} 
+\index{B\+ST@{B\+ST}!height@{height}}
+\index{height@{height}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{height()}{height()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int B\+S\+T\+::height (\begin{DoxyParamCaption}\item[{struct \hyperlink{structnode}{node} $\ast$}]{curr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A public member function that to get height of particular node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & pointer to the current node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the integer value of height 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_aba9736b7dae49342204347347f3008a9}\label{classBST_aba9736b7dae49342204347347f3008a9}} 
+\index{B\+ST@{B\+ST}!inorder\+Travel@{inorder\+Travel}}
+\index{inorder\+Travel@{inorder\+Travel}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{inorder\+Travel()}{inorderTravel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void B\+S\+T\+::inorder\+Travel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A public member functionto dtore the inoder travelsal of the \hyperlink{classBST}{B\+ST}. 
+
+\begin{DoxyReturn}{Returns}
+protected function inoder\+Travel 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_ab26627cb83fe02abc1940e61b5b32048}\label{classBST_ab26627cb83fe02abc1940e61b5b32048}} 
+\index{B\+ST@{B\+ST}!inorder\+Travel@{inorder\+Travel}}
+\index{inorder\+Travel@{inorder\+Travel}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{inorder\+Travel()}{inorderTravel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void B\+S\+T\+::inorder\+Travel (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structnode}{node} $\ast$}]{curr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A public member function to get th inorder traversal array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & pointer to the current node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBST_ac2be220d080c4ca19f5741a0a8458837}\label{classBST_ac2be220d080c4ca19f5741a0a8458837}} 
+\index{B\+ST@{B\+ST}!inorder\+Traversal@{inorder\+Traversal}}
+\index{inorder\+Traversal@{inorder\+Traversal}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{inorder\+Traversal()}{inorderTraversal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void B\+S\+T\+::inorder\+Traversal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A public member function the return the protected member function for inorder traversal. 
+
+\begin{DoxyReturn}{Returns}
+private inoder\+Traversal function 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_a3ed595e801648f5c145f145c371489b4}\label{classBST_a3ed595e801648f5c145f145c371489b4}} 
+\index{B\+ST@{B\+ST}!inorder\+Traversal@{inorder\+Traversal}}
+\index{inorder\+Traversal@{inorder\+Traversal}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{inorder\+Traversal()}{inorderTraversal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void B\+S\+T\+::inorder\+Traversal (\begin{DoxyParamCaption}\item[{const struct \hyperlink{structnode}{node} $\ast$}]{curr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A protedted member function to print inorder\+Traversal of tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em curr} & pointer to the current node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBST_a5ab5b12888965cf4a366c9547361bc46}\label{classBST_a5ab5b12888965cf4a366c9547361bc46}} 
+\index{B\+ST@{B\+ST}!insert@{insert}}
+\index{insert@{insert}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool B\+S\+T\+::insert (\begin{DoxyParamCaption}\item[{int}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A membr function to insert the node/ new data into the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & an integer argument that is data to be stored new node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool whether inserted successfully or not 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classBST_ac6e2b74e41a615fa4ccc1b7de4981559}\label{classBST_ac6e2b74e41a615fa4ccc1b7de4981559}} 
+\index{B\+ST@{B\+ST}!insert@{insert}}
+\index{insert@{insert}!B\+ST@{B\+ST}}
+\subsubsection{\texorpdfstring{insert()}{insert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool B\+S\+T\+::insert (\begin{DoxyParamCaption}\item[{int}]{item,  }\item[{struct \hyperlink{structnode}{node} $\ast$}]{curr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A membr function to insert the node/ new data into the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & an integer argument that is data to be stored new node. \\
+\hline
+{\em curr} & pointer to the current node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool whether inserted successfully or not 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Q1.\+cpp\end{DoxyCompactItemize}

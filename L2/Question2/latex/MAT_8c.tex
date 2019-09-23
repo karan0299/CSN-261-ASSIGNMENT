@@ -1,0 +1,227 @@
+\hypertarget{MAT_8c}{}\section{M\+A\+T.\+c File Reference}
+\label{MAT_8c}\index{M\+A\+T.\+c@{M\+A\+T.\+c}}
+
+
+this header file will contain all required definitions and basic utilities functions.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structPoint}{Point}
+\begin{DoxyCompactList}\small\item\em Structure to encapsulate the point of a array. \end{DoxyCompactList}\item 
+struct \hyperlink{structNode}{Node}
+\begin{DoxyCompactList}\small\item\em Structure to encapulate each node of quad tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structNode}{Node} $\ast$ \hyperlink{MAT_8c_a7d7f5abbfdb16ce4050ba1235e361a09}{new\+\_\+node} (struct \hyperlink{structPoint}{Point} topL, struct \hyperlink{structPoint}{Point} btmR)
+\item 
+void \hyperlink{MAT_8c_aba401224b1330ef5e622b94650f2df86}{build\+Tree} (int $\ast$$\ast$arr, struct \hyperlink{structPoint}{Point} p1, struct \hyperlink{structPoint}{Point} p2, struct \hyperlink{structNode}{Node} $\ast$root)
+\item 
+int \hyperlink{MAT_8c_a289df0619d058cb0e589a74c2c3a46d9}{maximum} (int num1, int num2, int num3, int num4)
+\item 
+int \hyperlink{MAT_8c_ac9823bbab7962743a339529cc3f901f2}{height} (struct \hyperlink{structNode}{Node} $\ast$node)
+\item 
+void \hyperlink{MAT_8c_a357d67c1dddb76f7cb645e2fe084d688}{mark} (int $\ast$$\ast$array, int n, struct \hyperlink{structNode}{Node} $\ast$node)
+\item 
+void \hyperlink{MAT_8c_a31d183dc7db7f63e5b95228c08a053e8}{print\+Tree} (struct \hyperlink{structNode}{Node} $\ast$child)
+\item 
+void \hyperlink{MAT_8c_a189b57cd018c2a81bedd5fbd62d6590a}{fill\+\_\+out\+Array} (struct \hyperlink{structNode}{Node} $\ast$tree, int $\ast$$\ast$array)
+\item 
+void \hyperlink{MAT_8c_ae5a18172830f5927509378286d01c3dd}{print\+Tree\+In\+Array} (int $\ast$$\ast$array, int size)
+\item 
+void \hyperlink{MAT_8c_acdef7a1fd863a6d3770c1268cb06add3}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{MAT_8c_ac0c78868b4a3f006af9a97322f7a09d0}\label{MAT_8c_ac0c78868b4a3f006af9a97322f7a09d0}} 
+int \hyperlink{MAT_8c_ac0c78868b4a3f006af9a97322f7a09d0}{t\+\_\+height}
+\begin{DoxyCompactList}\small\item\em Stores the height of quad tree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this header file will contain all required definitions and basic utilities functions. 
+
+\begin{DoxyAuthor}{Author}
+Karanpreet Singh
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{MAT_8c_aba401224b1330ef5e622b94650f2df86}\label{MAT_8c_aba401224b1330ef5e622b94650f2df86}} 
+\index{M\+A\+T.\+c@{M\+A\+T.\+c}!build\+Tree@{build\+Tree}}
+\index{build\+Tree@{build\+Tree}!M\+A\+T.\+c@{M\+A\+T.\+c}}
+\subsubsection{\texorpdfstring{build\+Tree()}{buildTree()}}
+{\footnotesize\ttfamily void build\+Tree (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{arr,  }\item[{struct \hyperlink{structPoint}{Point}}]{p1,  }\item[{struct \hyperlink{structPoint}{Point}}]{p2,  }\item[{struct \hyperlink{structNode}{Node} $\ast$}]{root }\end{DoxyParamCaption})}
+
+This method will be used to generate the quad tree recursively \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & 2D array depicting region to be mapped to quad tree \\
+\hline
+{\em p1} & to mark the topleft point of the area for which fuction is called, \\
+\hline
+{\em p2} & bottom right to mark the topleft point of the area for which fuction is called, \\
+\hline
+{\em root} & \hyperlink{structNode}{Node} point to parent node of the node if created \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{MAT_8c_a189b57cd018c2a81bedd5fbd62d6590a}\label{MAT_8c_a189b57cd018c2a81bedd5fbd62d6590a}} 
+\index{M\+A\+T.\+c@{M\+A\+T.\+c}!fill\+\_\+out\+Array@{fill\+\_\+out\+Array}}
+\index{fill\+\_\+out\+Array@{fill\+\_\+out\+Array}!M\+A\+T.\+c@{M\+A\+T.\+c}}
+\subsubsection{\texorpdfstring{fill\+\_\+out\+Array()}{fill\_outArray()}}
+{\footnotesize\ttfamily void fill\+\_\+out\+Array (\begin{DoxyParamCaption}\item[{struct \hyperlink{structNode}{Node} $\ast$}]{tree,  }\item[{int $\ast$$\ast$}]{array }\end{DoxyParamCaption})}
+
+This method will be used to represent the quad tree in form of maximal square array \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & Pointer to root node of passed quad tree \\
+\hline
+{\em array} & Pointer to maximal square array of quad tree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{MAT_8c_ac9823bbab7962743a339529cc3f901f2}\label{MAT_8c_ac9823bbab7962743a339529cc3f901f2}} 
+\index{M\+A\+T.\+c@{M\+A\+T.\+c}!height@{height}}
+\index{height@{height}!M\+A\+T.\+c@{M\+A\+T.\+c}}
+\subsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily int height (\begin{DoxyParamCaption}\item[{struct \hyperlink{structNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+This helper method will be used to give the height of the quad tree recursively \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The parent node from which height is calculated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{MAT_8c_acdef7a1fd863a6d3770c1268cb06add3}\label{MAT_8c_acdef7a1fd863a6d3770c1268cb06add3}} 
+\index{M\+A\+T.\+c@{M\+A\+T.\+c}!main@{main}}
+\index{main@{main}!M\+A\+T.\+c@{M\+A\+T.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily void main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+to mark start and end of cpu clock
+
+store the time taken by cpu to perform operation
+
+Pointer to file containing region in form of array \mbox{\Hypertarget{MAT_8c_a357d67c1dddb76f7cb645e2fe084d688}\label{MAT_8c_a357d67c1dddb76f7cb645e2fe084d688}} 
+\index{M\+A\+T.\+c@{M\+A\+T.\+c}!mark@{mark}}
+\index{mark@{mark}!M\+A\+T.\+c@{M\+A\+T.\+c}}
+\subsubsection{\texorpdfstring{mark()}{mark()}}
+{\footnotesize\ttfamily void mark (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{array,  }\item[{int}]{n,  }\item[{struct \hyperlink{structNode}{Node} $\ast$}]{node }\end{DoxyParamCaption})}
+
+This helper method will be used to mark the node value of in the form of maximal square array \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Array which is to be marked \\
+\hline
+{\em node} & \hyperlink{structNode}{Node} which is going to be marked in array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{MAT_8c_a289df0619d058cb0e589a74c2c3a46d9}\label{MAT_8c_a289df0619d058cb0e589a74c2c3a46d9}} 
+\index{M\+A\+T.\+c@{M\+A\+T.\+c}!maximum@{maximum}}
+\index{maximum@{maximum}!M\+A\+T.\+c@{M\+A\+T.\+c}}
+\subsubsection{\texorpdfstring{maximum()}{maximum()}}
+{\footnotesize\ttfamily int maximum (\begin{DoxyParamCaption}\item[{int}]{num1,  }\item[{int}]{num2,  }\item[{int}]{num3,  }\item[{int}]{num4 }\end{DoxyParamCaption})}
+
+This method will be used to return maximum of Four numbers \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em num1} & number1 \\
+\hline
+{\em num2} & number2 \\
+\hline
+{\em num3} & number3 \\
+\hline
+{\em num4} & number4 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{MAT_8c_a7d7f5abbfdb16ce4050ba1235e361a09}\label{MAT_8c_a7d7f5abbfdb16ce4050ba1235e361a09}} 
+\index{M\+A\+T.\+c@{M\+A\+T.\+c}!new\+\_\+node@{new\+\_\+node}}
+\index{new\+\_\+node@{new\+\_\+node}!M\+A\+T.\+c@{M\+A\+T.\+c}}
+\subsubsection{\texorpdfstring{new\+\_\+node()}{new\_node()}}
+{\footnotesize\ttfamily struct \hyperlink{structNode}{Node} $\ast$ new\+\_\+node (\begin{DoxyParamCaption}\item[{struct \hyperlink{structPoint}{Point}}]{topL,  }\item[{struct \hyperlink{structPoint}{Point}}]{btmR }\end{DoxyParamCaption})}
+
+This method will be used to create individual node of a quad tree \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em topL} & to mark the topleft point of the area , generating node will be pointing to \\
+\hline
+{\em btmR} & to mark the bottom right point of the area , generating node will be pointing to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{MAT_8c_a31d183dc7db7f63e5b95228c08a053e8}\label{MAT_8c_a31d183dc7db7f63e5b95228c08a053e8}} 
+\index{M\+A\+T.\+c@{M\+A\+T.\+c}!print\+Tree@{print\+Tree}}
+\index{print\+Tree@{print\+Tree}!M\+A\+T.\+c@{M\+A\+T.\+c}}
+\subsubsection{\texorpdfstring{print\+Tree()}{printTree()}}
+{\footnotesize\ttfamily void print\+Tree (\begin{DoxyParamCaption}\item[{struct \hyperlink{structNode}{Node} $\ast$}]{child }\end{DoxyParamCaption})}
+
+This method will be used to print quad Tree in form (node value, bit value, level) \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em child} & Pointer to the nod of quad tree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{MAT_8c_ae5a18172830f5927509378286d01c3dd}\label{MAT_8c_ae5a18172830f5927509378286d01c3dd}} 
+\index{M\+A\+T.\+c@{M\+A\+T.\+c}!print\+Tree\+In\+Array@{print\+Tree\+In\+Array}}
+\index{print\+Tree\+In\+Array@{print\+Tree\+In\+Array}!M\+A\+T.\+c@{M\+A\+T.\+c}}
+\subsubsection{\texorpdfstring{print\+Tree\+In\+Array()}{printTreeInArray()}}
+{\footnotesize\ttfamily void print\+Tree\+In\+Array (\begin{DoxyParamCaption}\item[{int $\ast$$\ast$}]{array,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+This method will be used to print the Quad tree in maximal square array form \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em array} & Maximal square array of quad tree \\
+\hline
+{\em size} & size of each dimension of array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+04/08/19 
+\end{DoxyDate}

@@ -1,0 +1,36 @@
+\hypertarget{structNode}{}\section{Node Struct Reference}
+\label{structNode}\index{Node@{Node}}
+
+
+Structure to encapulate each node of quad tree.  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structNode_aaa9062a8f1e7cdb47c6eccefdfdedf5f}\label{structNode_aaa9062a8f1e7cdb47c6eccefdfdedf5f}} 
+struct \hyperlink{structPoint}{Point} topleft \hyperlink{structNode_aaa9062a8f1e7cdb47c6eccefdfdedf5f}{btmright}
+\begin{DoxyCompactList}\small\item\em to mark the topleft and bottom right points ,the area this node is pointing to \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structNode_a921de3da587516349b0527862e8b63f4}\label{structNode_a921de3da587516349b0527862e8b63f4}} 
+int \hyperlink{structNode_a921de3da587516349b0527862e8b63f4}{bit\+\_\+value}
+\begin{DoxyCompactList}\small\item\em whether whether region is there or not \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structNode_a4bd62abe5f16228d8e65d5c983a3937e}\label{structNode_a4bd62abe5f16228d8e65d5c983a3937e}} 
+struct \hyperlink{structNode}{Node} $\ast$ \hyperlink{structNode_a4bd62abe5f16228d8e65d5c983a3937e}{ne}
+\begin{DoxyCompactList}\small\item\em pointing to north east quad of given node \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structNode_a4302d2ff3090125c57199d4cec56069b}\label{structNode_a4302d2ff3090125c57199d4cec56069b}} 
+struct \hyperlink{structNode}{Node} $\ast$ \hyperlink{structNode_a4302d2ff3090125c57199d4cec56069b}{nw}
+\begin{DoxyCompactList}\small\item\em pointing to north west quad of given node \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structNode_a6d8a9792c1f4da8f3b6fe05e1482a91f}\label{structNode_a6d8a9792c1f4da8f3b6fe05e1482a91f}} 
+struct \hyperlink{structNode}{Node} $\ast$ \hyperlink{structNode_a6d8a9792c1f4da8f3b6fe05e1482a91f}{se}
+\begin{DoxyCompactList}\small\item\em pointing to south east quad of given node \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{structNode_a869a287b8df2c273943709164c2ff7df}\label{structNode_a869a287b8df2c273943709164c2ff7df}} 
+struct \hyperlink{structNode}{Node} $\ast$ \hyperlink{structNode_a869a287b8df2c273943709164c2ff7df}{sw}
+\begin{DoxyCompactList}\small\item\em pointing to south west quad of given node \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Structure to encapulate each node of quad tree. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{MAT_8c}{M\+A\+T.\+c}\end{DoxyCompactItemize}
