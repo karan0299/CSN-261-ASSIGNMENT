@@ -1,5 +1,7 @@
 graph kruskal{
-C--D[label = 4];
-A--D[label = 5];
-A--B[label = 10];
+B--P[label = 2];
+P--F[label = 2];
+P--D[label = 3];
+D--E[label = 3];
+A--B[label = 4];
 }

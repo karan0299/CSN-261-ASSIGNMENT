@@ -1,0 +1,13 @@
+graph binomialHeap{
+70[color="orangered", style="filled" fillcolor="orange"]
+50[color="orangered", style="filled" fillcolor="orange"]
+60[color="olivedrab", style="filled" fillcolor="olivedrab2"]
+50--60
+10[color="orangered", style="filled" fillcolor="orange"]
+30[color="olivedrab", style="filled" fillcolor="olivedrab2"]
+10--30
+40[color="olivedrab", style="filled" fillcolor="olivedrab2"]
+30--40
+20[color="olivedrab", style="filled" fillcolor="olivedrab2"]
+10--20
+}

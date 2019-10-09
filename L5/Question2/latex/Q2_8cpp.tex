@@ -1,0 +1,150 @@
+\hypertarget{Q2_8cpp}{}\section{Q2.\+cpp File Reference}
+\label{Q2_8cpp}\index{Q2.\+cpp@{Q2.\+cpp}}
+
+
+this file will contain all required definitions and basic utilities functions.  
+
+
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Q2.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Q2_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structedge}{edge}
+\begin{DoxyCompactList}\small\item\em struct for edge \end{DoxyCompactList}\item 
+class \hyperlink{classGraph}{Graph}
+\begin{DoxyCompactList}\small\item\em class for \hyperlink{classGraph}{Graph} Structure \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{Q2_8cpp_ab8784b04f5587180fef11726c653d4ff}{compare} (\hyperlink{structedge}{edge} e1, \hyperlink{structedge}{edge} e2)
+\item 
+int \hyperlink{Q2_8cpp_a70c4f860bb2d9df3ce0b4a68294dc2cf}{find} (int parent\mbox{[}$\,$\mbox{]}, int i)
+\item 
+void \hyperlink{Q2_8cpp_a1ef911bfe88ce1d49d8c565ff0b4232c}{Union} (int parent\mbox{[}$\,$\mbox{]}, int x, int y)
+\item 
+void \hyperlink{Q2_8cpp_ac149afd9f0fbdb60fa97b69ee56e643d}{make\+D\+O\+Tfile} (\hyperlink{structedge}{edge} M\+ST\mbox{[}$\,$\mbox{]}, int len)
+\item 
+void \hyperlink{Q2_8cpp_ab44e8afa059bb16a7305d8b3f1272c68}{kruskal} (\hyperlink{classGraph}{Graph} graph)
+\item 
+\mbox{\Hypertarget{Q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{Q2_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+int {\bfseries main} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this file will contain all required definitions and basic utilities functions. 
+
+\begin{DoxyAuthor}{Author}
+Karanpreet Singh
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+29/09/19 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{Q2_8cpp_ab8784b04f5587180fef11726c653d4ff}\label{Q2_8cpp_ab8784b04f5587180fef11726c653d4ff}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!compare@{compare}}
+\index{compare@{compare}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily bool compare (\begin{DoxyParamCaption}\item[{\hyperlink{structedge}{edge}}]{e1,  }\item[{\hyperlink{structedge}{edge}}]{e2 }\end{DoxyParamCaption})}
+
+This method will be used compare two edges while sorting \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em e1} & one of the edge \\
+\hline
+{\em e2} & second edge \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+29/09/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_a70c4f860bb2d9df3ce0b4a68294dc2cf}\label{Q2_8cpp_a70c4f860bb2d9df3ce0b4a68294dc2cf}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!find@{find}}
+\index{find@{find}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily int find (\begin{DoxyParamCaption}\item[{int}]{parent\mbox{[}$\,$\mbox{]},  }\item[{int}]{i }\end{DoxyParamCaption})}
+
+This method will be used find whether cylce is made or or \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em paent} & parent of given index \\
+\hline
+{\em i} & position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+29/09/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_ab44e8afa059bb16a7305d8b3f1272c68}\label{Q2_8cpp_ab44e8afa059bb16a7305d8b3f1272c68}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!kruskal@{kruskal}}
+\index{kruskal@{kruskal}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{kruskal()}{kruskal()}}
+{\footnotesize\ttfamily void kruskal (\begin{DoxyParamCaption}\item[{\hyperlink{classGraph}{Graph}}]{graph }\end{DoxyParamCaption})}
+
+This method where kruskal algoritihm is implemented \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & graph whose M\+ST is to be found \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+29/09/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_ac149afd9f0fbdb60fa97b69ee56e643d}\label{Q2_8cpp_ac149afd9f0fbdb60fa97b69ee56e643d}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!make\+D\+O\+Tfile@{make\+D\+O\+Tfile}}
+\index{make\+D\+O\+Tfile@{make\+D\+O\+Tfile}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{make\+D\+O\+Tfile()}{makeDOTfile()}}
+{\footnotesize\ttfamily void make\+D\+O\+Tfile (\begin{DoxyParamCaption}\item[{\hyperlink{structedge}{edge}}]{M\+ST\mbox{[}$\,$\mbox{]},  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+This method will be used to amke D\+OT file \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em M\+ST} & storing edges that are in M\+ST \\
+\hline
+{\em len} & number of vertices \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+29/09/19 
+\end{DoxyDate}
+\mbox{\Hypertarget{Q2_8cpp_a1ef911bfe88ce1d49d8c565ff0b4232c}\label{Q2_8cpp_a1ef911bfe88ce1d49d8c565ff0b4232c}} 
+\index{Q2.\+cpp@{Q2.\+cpp}!Union@{Union}}
+\index{Union@{Union}!Q2.\+cpp@{Q2.\+cpp}}
+\subsubsection{\texorpdfstring{Union()}{Union()}}
+{\footnotesize\ttfamily void Union (\begin{DoxyParamCaption}\item[{int}]{parent\mbox{[}$\,$\mbox{]},  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+This method will be used compare two edges while sorting \begin{DoxyAuthor}{Author}
+Karanpreet Singh 
+\end{DoxyAuthor}
+
+\begin{DoxyParams}{Parameters}
+{\em e1} & one of the edge \\
+\hline
+{\em e2} & second edge \\
+\hline
+\end{DoxyParams}
+\begin{DoxyDate}{Date}
+29/09/19 
+\end{DoxyDate}
